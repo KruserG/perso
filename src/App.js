@@ -35,7 +35,7 @@ function App() {
     </div>
 
     <div className="col-6">
-       <h1 className="bigText">Hi!</h1>
+       <h1 className="bigText">Hi.</h1>
        <h1>I'm Omar Boulbaze</h1>
        <h6>I'm a Junior Full-Stack developer. I love bringing innovative ideas to the real world and helping the community by contributing to open-source projects.</h6>
     </div>
