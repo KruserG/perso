@@ -35,25 +35,31 @@ function App() {
     </div>
 
     <div className="col-6">
-       <h1 className="bigText">Hi.</h1>
+       <h1 className="bigText">Hi!</h1>
        <h1>I'm Omar Boulbaze</h1>
        <h6>I'm a Junior Full-Stack developer. I love bringing innovative ideas to the real world and helping the community by contributing to open-source projects.</h6>
+      
+      
+
+    </div>
+
+    <div>
+      
     </div>
 
     
 
     </div>
      
-    <div className="custom-shape-divider-bottom-1616587874">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-         className="shape-fill"></path>
-    </svg>
-</div>
-     
+    
      </div>
 
-    
+     <div className="wave">
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path  fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,149.3C384,171,480,245,576,240C672,235,768,149,864,106.7C960,64,1056,64,1152,96C1248,128,1344,192,1392,224L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+</svg>
+</div>
+
     </div>
 
   
