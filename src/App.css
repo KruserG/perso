@@ -24,6 +24,14 @@
     }
 }
 
-.wave path{
+.wave .wave1{
     animation: wavy 5s infinite ease-in-out;
+}
+
+.wave .wave2{
+    animation: wavy 10s infinite ease-in-out;
+}
+
+.wave .wave3{
+    animation: wavy 15s infinite ease-in-out;
 }

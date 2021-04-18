@@ -56,7 +56,10 @@ function App() {
 
      <div className="wave">
      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-  <path  fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,149.3C384,171,480,245,576,240C672,235,768,149,864,106.7C960,64,1056,64,1152,96C1248,128,1344,192,1392,224L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  <path className="wave1" fill-opacity="0.6"></path>
+  <path className="wave2" fill-opacity="0.3"></path>
+  <path className="wave3" fill-opacity="0.1"></path>
+
 </svg>
 </div>
 
