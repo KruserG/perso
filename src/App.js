@@ -6,7 +6,7 @@
 //importing style
 import "./App.css";
 
-//font-awesome importing
+//font-awesome importing test
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
