@@ -6,7 +6,7 @@
 //importing style
 import "./App.css";
 
-//font-awesome importing test
+//font-awesome importing
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
@@ -36,7 +36,7 @@ function App() {
 
     <div className="col-6">
        <h1 className="bigText">Hi!</h1>
-       <h1>I'm Omar Boulbaze</h1>
+       <h1>I'm Omar Boulbaze!</h1>
        <h6>I'm a Junior Developer. I love bringing innovative ideas to the real world and helping the community by contributing to open-source projects.</h6>
       
       
