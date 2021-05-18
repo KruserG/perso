@@ -29,8 +29,8 @@ const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
 
         <div className="col-6">
             <h1 className="bigText">Allo!</h1>
-            <h1>Je suis Omar Boulbaze.</h1>
-            <h6>Je suis développeur WEB. J'aime apporter des idées innovantes au monde réel ainsi que de supporter la communauté des développeurs en contribuant à des projets open source.</h6>
+            <h1>Moi c'est Omar Boulbaze.</h1>
+            <h6>Je suis développeur WEB. J'aime suivre et participer à l'évolution de projets, en partant de la conception jusqu'à la publication. Tout en supportant la communauté des développeurs en contribuant à des projets open source.</h6>
         </div>
 
       </div>
