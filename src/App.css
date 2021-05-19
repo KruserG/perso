@@ -104,7 +104,7 @@ padding-top: 5rem;
 
 .experiences .body .link{
     text-decoration: none !important;
-   color:#212529;
+    color:#212529;
 }
 
 .experiences .body .item{
@@ -120,7 +120,6 @@ padding-top: 5rem;
 
 .experiences .body .item:hover {
    transform: translateY(-2%);
-  
 }
 
 .item .logo{

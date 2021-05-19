@@ -9,7 +9,8 @@ import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 //react-scroll
 import { Link, Element } from 'react-scroll'
-
+//react-bootstrap
+import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 
 function App() {
 
@@ -19,6 +20,20 @@ const logoJquery = "https://habrastorage.org/getpro/habr/post_images/99b/37e/278
 const logoPhotoshop = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png";
 const logoIllustrator = "https://cudichis.ro/wp-content/uploads/2021/03/1051px-Adobe_Illustrator_CC_icon.svg.png";
 const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
+
+const projectSkills1 = [{name:"PHP",image:logoPhp},
+                        {name:"Node.js",image:logoNode},
+                        {name:"jQuery",image:logoJquery},
+                        {name:"Discord.js",image:logoDiscordJs},
+                        {name:"Adobe Photoshop",image:logoPhotoshop},
+                        {name:"Adobe Illustrator",image:logoIllustrator}
+                      ];
+
+const projectSkills2 = [{name:"PHP",image:logoPhp},
+                        {name:"jQuery",image:logoJquery},
+                        {name:"Adobe Illustrator",image:logoIllustrator}
+                      ];
+
   return (
 
   <div>
@@ -28,7 +43,7 @@ const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
       <div className="d-flex justify-content-center">
 
         <div className="col-6">
-            <h1 className="bigText">Allo!</h1>
+            <h1 className="bigText">Salut!</h1>
             <h1>Moi c'est Omar Boulbaze.</h1>
             <h6>Je suis développeur WEB. J'aime suivre et participer à l'évolution de projets, en partant de la conception jusqu'à la publication. Tout en supportant la communauté des développeurs en contribuant à des projets open source.</h6>
         </div>
@@ -77,12 +92,16 @@ const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
           <p>Sunset Radio est une radio francophone communautaire basé sur le web. J'ai travaillé sur le développement du site internet ainsi que la conception d'un bot musical sur une plateforme de communication nommée Discord.</p>
           </div>
           <div className="tools">
-            <img className="tool-logo" src={logoPhp} alt="tool"/>
-            <img className="tool-logo" src={logoNode} alt="tool"/>
-            <img className="tool-logo" src={logoJquery} alt="tool"/>
-            <img className="tool-logo" src={logoDiscordJs} alt="tool"/>
-            <img className="tool-logo" src={logoPhotoshop} alt="tool"/>
-            <img className="tool-logo" src={logoIllustrator} alt="tool"/>
+           
+           {
+             projectSkills1.map((skill)=>{
+              return(
+              <OverlayTrigger placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+              <img className="tool-logo" src={skill.image} alt={skill.name}/>
+              </OverlayTrigger>
+              );
+             })
+           }           
           </div>
         </div>
         </a>
@@ -94,8 +113,15 @@ const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
           <p>TCorner est un projet scolaire en équipe dans lequel j'étais en charge du développement d'un site web statique pour des raisons de présentation.</p>
           </div>
           <div className="tools">
-            <img className="tool-logo" src={logoPhp} alt="tool"/>
-            <img className="tool-logo" src={logoJquery} alt="tool"/>
+          {
+             projectSkills2.map((skill)=>{
+              return(
+              <OverlayTrigger placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+              <img className="tool-logo" src={skill.image} alt={skill.name}/>
+              </OverlayTrigger>
+              );
+             })
+           }  
           </div>
         </div>
         </a>
@@ -104,18 +130,15 @@ const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
 
       <div className="quote">
         <h4>
-        “A commitment to lifelong learning is a natural expression of the practice of living consciously.”
+        “Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.”
         <br/>
-— Nathaniel Branden
+— Confucius
         </h4>
 
         <h1 className="bigText">...</h1>
       </div>
     
-    </Element>
-    
-
-
+    </Element> 
  
   </div>
   );
