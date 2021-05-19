@@ -43,7 +43,11 @@
         transform: translateY(20%);
     }
 }
-
+.main-page{
+    position: absolute;
+    padding-inline: 22%;
+    height: 100%;
+}
 .experiences{
     position: absolute;
     bottom: 0;
