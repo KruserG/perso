@@ -38,19 +38,23 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
 
   <div>
 
+    <div className="language-switch">
+      <a href="." className="button">ENGLISH</a>
+    </div>
     <div className="main-page">
    
       <div className="d-flex justify-content-center">
 
-        <div className="col-6">
+        <div className="aboutme">
             <h1 className="bigText">Salut!</h1>
             <h1>Moi c'est Omar Boulbaze.</h1>
+            <br/>
             <h6>Je suis développeur WEB. J'aime suivre et participer à l'évolution de projets, en partant de la conception jusqu'à la publication. Tout en supportant la communauté des développeurs en contribuant à des projets open source.</h6>
         </div>
 
       </div>
 
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center social-links">
         
           <a className="btn text-dark" href="https://www.linkedin.com/in/omarboulbaze/" target="_blank" rel="noreferrer"><h1><FontAwesomeIcon icon={faLinkedin} /></h1></a>
           <a className="btn text-dark" href="https://github.com/KruserG" target="_blank" rel="noreferrer"><h1><FontAwesomeIcon icon={faGithub} /></h1></a>
@@ -64,8 +68,9 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
         to="experiences" 
         smooth={true}
         duration={1000}
+        className="scroll_down"
         >
-          <span className="scroll_down"><FontAwesomeIcon icon={faAngleDoubleDown} /></span>
+          <span><FontAwesomeIcon icon={faAngleDoubleDown} /></span>
         </Link>
       </div>
       <div className="wave">
@@ -97,8 +102,8 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
            {
              projectSkills1.map((skill)=>{
               return(
-              <OverlayTrigger placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
-              <img className="tool-logo" src={skill.image} alt={skill.name}/>
+              <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+              <img className="tool-logo"  src={skill.image} alt={skill.name}/>
               </OverlayTrigger>
               );
              })
@@ -117,7 +122,7 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
           {
              projectSkills2.map((skill)=>{
               return(
-              <OverlayTrigger placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+              <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
               <img className="tool-logo" src={skill.image} alt={skill.name}/>
               </OverlayTrigger>
               );
@@ -131,15 +136,16 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
 
       <div className="quote">
         <h4>
-        “Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.”
+        “Les gens qui sont assez fous pour penser qu'ils peuvent changer le monde sont ceux qui le font.”
         <br/>
-— Confucius
+— Steve Jobs
         </h4>
 
         <h1 className="bigText">...</h1>
       </div>
     
     </Element> 
+ 
  
   </div>
   );
