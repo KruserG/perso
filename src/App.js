@@ -13,7 +13,11 @@ import { Link, Element } from 'react-scroll'
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 //react-div-100vh
 import Div100vh from 'react-div-100vh'
-
+//react
+import {useState} from 'react';
+//languages
+import english from './translations/english.json';
+import french from './translations/french.json';
 
 function App() {
 
@@ -37,21 +41,29 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
                         {name:"Adobe Illustrator",image:logoIllustrator}
                       ];
 
+const [selectedLanguage, setSelectedLanguage] = useState(french);
+
+const switchLanguage = ()=>{
+selectedLanguage === french ?  setSelectedLanguage(english) : setSelectedLanguage(french)
+}
+
   return (
 
   <div>
 
-    {/* <div className="language-switch"><a href="." className="button">ENGLISH</a></div> */}
+    <div className="language-switch" onClick={()=>switchLanguage()}>
+      <button className="button">{selectedLanguage.changeButtonLanguage}</button>
+    </div>
 
     <Div100vh className="main-page">
    
       <div className="d-flex justify-content-center">
 
         <div className="aboutme">
-            <h1 className="bigText">Salut!</h1>
-            <h1 className="myNameIs">Moi c'est Omar Boulbaze.</h1>
+            <h1 className="bigText">{selectedLanguage.mainPage.welcome}</h1>
+            <h1 className="myNameIs">{selectedLanguage.mainPage.introduction}</h1>
             <br/>
-            <h6>Je suis développeur WEB. J'aime suivre et participer à l'évolution de projets, en partant de la conception jusqu'à la publication. Tout en supportant la communauté des développeurs en contribuant à des projets open source.</h6>
+            <h6>{selectedLanguage.mainPage.description}</h6>
         </div>
 
       </div>
@@ -89,7 +101,7 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
     <Element name="experiences" className="experiences">
       
       <div className="head">
-        <h1 className="title">Expériences</h1>
+        <h1 className="title">{selectedLanguage.experiences.title}</h1>
       </div>
 
       <div className="body">
@@ -97,9 +109,9 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
         <a className="link" href="https://sunsetradio.me" target="_blank" rel="noreferrer">
           <div className="item">
           <img className="logo" src="https://imgur.com/wBUzy2f.jpg" alt="sunsetradio-logo"/>
-          <h2 className="title">Sunset Radio</h2>
+          <h2 className="title">{selectedLanguage.experiences.project0.title}</h2>
           <div className="description">
-          <p>Sunset Radio est une radio francophone communautaire basé sur le web. J'ai travaillé sur le développement du site internet ainsi que la conception d'un bot musical sur une plateforme de communication nommée Discord.</p>
+          <p>{selectedLanguage.experiences.project0.description}</p>
           </div>
           <div className="tools">
            
@@ -118,9 +130,9 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
         <a className="link" href="https://tcorner.net" target="_blank" rel="noreferrer">
         <div className="item">
           <img className="logo" src="https://st3.depositphotos.com/3096625/18861/v/600/depositphotos_188612498-stock-illustration-monogram-tc-logo-hipster-initials.jpg" alt="sunsetradio-logo"/>
-          <h2 className="title">Technological Corner</h2>
+          <h2 className="title">{selectedLanguage.experiences.project1.title}</h2>
           <div className="description">
-          <p>TCorner est un projet scolaire en équipe dans lequel j'étais en charge du développement d'un site web statique pour des raisons de présentation.</p>
+          <p>{selectedLanguage.experiences.project1.description}</p>
           </div>
           <div className="tools">
           {
@@ -140,9 +152,9 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
 
       <div className="quote">
         <h4>
-        “Les gens qui sont assez fous pour penser qu'ils peuvent changer le monde sont ceux qui le font.”
+        {selectedLanguage.quote.quote0.content}
         <br/>
-— Steve Jobs
+        {selectedLanguage.quote.quote0.author}
         </h4>
 
         <h1 className="bigText">...</h1>

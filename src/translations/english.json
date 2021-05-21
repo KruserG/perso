@@ -1,0 +1,28 @@
+{
+    
+    "mainPage": {
+        "welcome": "Hi!",
+        "introduction":"I'm Omar Boulbaze.",
+        "description":"I am a WEB developer. I like to follow and participate in the evolution of projects, from conception to publication. While supporting the community of developers by contributing to open-source projects."
+    },
+    "experiences":{
+        "title":"Experiences",
+        "project0":{
+            "title":"Sunset Radio",
+            "description":"Sunset Radio is a web-based francophone community radio station. I worked on the development of the website as well as the design of a music bot on a communication platform called Discord."
+        },
+        "project1":{
+            "title":"Technological Corner",
+            "description":"TCorner is a school team project in which I was in charge of developing a static website for presentation purposes."
+        }
+    },
+    "quote":{
+        "quote0":{
+            "content":"“The people who are crazy enough to think they can change the world are the ones who do.”",
+            "author":"— Steve Jobs"
+        }
+    },
+    "changeButtonLanguage":"Français"
+    
+
+}

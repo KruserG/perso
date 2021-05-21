@@ -1,3 +1,6 @@
+.btn.focus, .btn:focus{
+    box-shadow: 0 0 0 0.2rem rgb(80 80 80 / 25%) !important;
+}
 
 
 .bigText{
@@ -180,19 +183,23 @@ padding-top: 5rem;
 }
 
 .language-switch{
-    visibility: hidden;
     float: right;
+    margin:1rem;
 }
 
+.language-switch:hover > .button{
+background-color: #343a40;
+color: white;
+
+}
+
+
 .language-switch .button{
-    text-decoration: none;
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
-    padding-bottom: 0.3rem;
-    border: 1px solid black;
+    border: 1px solid #343a40;
     border-radius: 4px;
-    color: black;
-    margin-top:1rem;
+    color: #343a40;
+    transition: all 0.4s;
+    min-width: 5rem;
 }
 
 
