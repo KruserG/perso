@@ -49,7 +49,7 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
 
         <div className="aboutme">
             <h1 className="bigText">Salut!</h1>
-            <h1>Moi c'est Omar Boulbaze.</h1>
+            <h1 className="myNameIs">Moi c'est Omar Boulbaze.</h1>
             <br/>
             <h6>Je suis développeur WEB. J'aime suivre et participer à l'évolution de projets, en partant de la conception jusqu'à la publication. Tout en supportant la communauté des développeurs en contribuant à des projets open source.</h6>
         </div>
