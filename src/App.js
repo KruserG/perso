@@ -38,9 +38,11 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
 
   <div>
 
-    <div className="language-switch">
+
+    {/* <div className="language-switch">
       <a href="." className="button">ENGLISH</a>
-    </div>
+    </div> */}
+
     <div className="main-page">
    
       <div className="d-flex justify-content-center">
@@ -86,10 +88,13 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
      
     
     <Element name="experiences" className="experiences">
+      
       <div className="head">
         <h1 className="title">Expériences</h1>
       </div>
+
       <div className="body">
+
         <a className="link" href="https://sunsetradio.me" target="_blank" rel="noreferrer">
           <div className="item">
           <img className="logo" src="https://imgur.com/wBUzy2f.jpg" alt="sunsetradio-logo"/>
