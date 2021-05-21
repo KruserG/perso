@@ -11,6 +11,9 @@ import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-ic
 import { Link, Element } from 'react-scroll'
 //react-bootstrap
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
+//react-div-100vh
+import Div100vh from 'react-div-100vh'
+
 
 function App() {
 
@@ -38,12 +41,9 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
 
   <div>
 
+    {/* <div className="language-switch"><a href="." className="button">ENGLISH</a></div> */}
 
-    {/* <div className="language-switch">
-      <a href="." className="button">ENGLISH</a>
-    </div> */}
-
-    <div className="main-page">
+    <Div100vh className="main-page">
    
       <div className="d-flex justify-content-center">
 
@@ -83,9 +83,8 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
       </svg>
     </div>
 
-    </div>
+    </Div100vh>
 
-     
     
     <Element name="experiences" className="experiences">
       
@@ -153,6 +152,7 @@ const projectSkills2 = [{name:"PHP",image:logoPhp},
  
  
   </div>
+
   );
 
 }
