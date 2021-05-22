@@ -7,6 +7,7 @@
     },
     "experiences":{
         "title":"Expériences",
+        "eyeIconToolTip":"Outils et librairies",
         "project0":{
             "title":"Sunset Radio",
             "description":"Sunset Radio est une radio francophone communautaire basé sur le web. J'ai travaillé sur le développement du site internet ainsi que la conception d'un bot musical sur une plateforme de communication nommée Discord."

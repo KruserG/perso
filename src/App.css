@@ -2,6 +2,26 @@
     box-shadow: 0 0 0 0.2rem rgb(80 80 80 / 25%) !important;
 }
 
+.language-switch{
+    float: right;
+    margin:1rem;
+}
+
+.language-switch:hover >.button{
+background-color: #343a40;
+color: white;
+
+}
+
+
+.language-switch .button{
+    border: 1px solid #343a40;
+    border-radius: 4px;
+    color: #343a40;
+    transition: all 0.4s;
+    min-width: 5rem;
+}
+
 
 .bigText{
     font-size: 8vw;
@@ -61,14 +81,27 @@
 }
 
 .experiences{
-    
     background-color: #343a40 ;
     width: 100%;
 }
 
 .experiences .head{
-padding-left: 5rem;
-padding-top: 5rem;
+padding-inline: 5rem;
+display: flex;
+justify-content: space-between;
+}
+
+.head .btn_dev{
+    border: 0px;
+    border-radius: 4px;
+    color: white;
+    transition: all 0.4s;
+    background-color: transparent;
+    font-size: 2.5rem ;
+}
+
+.head .btn_dev:hover{
+    color: #777777;
 }
 
 .experiences .head:hover > .title::before{
@@ -182,25 +215,7 @@ padding-top: 5rem;
     
 }
 
-.language-switch{
-    float: right;
-    margin:1rem;
-}
 
-.language-switch:hover > .button{
-background-color: #343a40;
-color: white;
-
-}
-
-
-.language-switch .button{
-    border: 1px solid #343a40;
-    border-radius: 4px;
-    color: #343a40;
-    transition: all 0.4s;
-    min-width: 5rem;
-}
 
 
 /* Portrait iPhone */
@@ -242,6 +257,14 @@ color: white;
 
     .quote .bigText{
         font-size: 20rem;
+    }
+
+    .language-switch .button{
+        font-size: 2rem;
+    }
+
+    .head .btn_dev{
+        font-size: 3rem;
     }
 }
 

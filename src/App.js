@@ -4,7 +4,7 @@ import "./App.css";
 //font-awesome importing
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //solid svg icons
-import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleDown, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 //brands svg icons
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 //react-scroll
@@ -27,31 +27,44 @@ const logoJquery = "https://habrastorage.org/getpro/habr/post_images/99b/37e/278
 const logoPhotoshop = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png";
 const logoIllustrator = "https://cudichis.ro/wp-content/uploads/2021/03/1051px-Adobe_Illustrator_CC_icon.svg.png";
 const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
+const logoBootstrap = "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png";
 
 const projectSkills1 = [{name:"PHP",image:logoPhp},
                         {name:"Node.js",image:logoNode},
                         {name:"jQuery",image:logoJquery},
                         {name:"Discord.js",image:logoDiscordJs},
+                        {name:"Bootstrap",image:logoBootstrap},
                         {name:"Adobe Photoshop",image:logoPhotoshop},
                         {name:"Adobe Illustrator",image:logoIllustrator}
                       ];
 
 const projectSkills2 = [{name:"PHP",image:logoPhp},
                         {name:"jQuery",image:logoJquery},
+                        {name:"Bootstrap",image:logoBootstrap},
                         {name:"Adobe Illustrator",image:logoIllustrator}
                       ];
 
 const [selectedLanguage, setSelectedLanguage] = useState(french);
+const [toolsVisibility, setToolsVisibility] = useState("hidden");
+const [eyeIcon, switchEyeIcon] = useState(faEye);
 
 const switchLanguage = ()=>{
 selectedLanguage === french ?  setSelectedLanguage(english) : setSelectedLanguage(french)
 }
 
+const switchToolsVisibility = ()=>{
+  toolsVisibility === "visible"  ? setToolsVisibility("hidden") : setToolsVisibility("visible")
+  toolsVisibility === "visible"  ? switchEyeIcon(faEye) : switchEyeIcon(faEyeSlash)
+  
+}
+
+
+
   return (
 
   <div>
 
-    <div className="language-switch" onClick={()=>switchLanguage()}>
+    <div className="language-switch" onClick={switchLanguage}>
       <button className="button">{selectedLanguage.changeButtonLanguage}</button>
     </div>
 
@@ -102,6 +115,9 @@ selectedLanguage === french ?  setSelectedLanguage(english) : setSelectedLanguag
       
       <div className="head">
         <h1 className="title">{selectedLanguage.experiences.title}</h1>
+        <OverlayTrigger placement="left"  delay={{ hide: 400 }} overlay={<Tooltip>{selectedLanguage.experiences.eyeIconToolTip}</Tooltip>}>
+        <button className="btn_dev" onClick={switchToolsVisibility}><FontAwesomeIcon icon={eyeIcon} /></button>
+        </OverlayTrigger>
       </div>
 
       <div className="body">
@@ -113,7 +129,7 @@ selectedLanguage === french ?  setSelectedLanguage(english) : setSelectedLanguag
           <div className="description">
           <p>{selectedLanguage.experiences.project0.description}</p>
           </div>
-          <div className="tools">
+          <div className="tools" style={{visibility : toolsVisibility}}>
            
            {
              projectSkills1.map((skill)=>{
@@ -134,7 +150,7 @@ selectedLanguage === french ?  setSelectedLanguage(english) : setSelectedLanguag
           <div className="description">
           <p>{selectedLanguage.experiences.project1.description}</p>
           </div>
-          <div className="tools">
+          <div className="tools" style={{visibility : toolsVisibility}}>
           {
              projectSkills2.map((skill)=>{
               return(
