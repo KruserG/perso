@@ -115,7 +115,7 @@ const switchToolsVisibility = ()=>{
       
       <div className="head">
         <h1 className="title">{selectedLanguage.experiences.title}</h1>
-        <OverlayTrigger placement="left"  delay={{ hide: 400 }} overlay={<Tooltip>{selectedLanguage.experiences.eyeIconToolTip}</Tooltip>}>
+        <OverlayTrigger placement="left" overlay={<Tooltip>{selectedLanguage.experiences.eyeIconToolTip}</Tooltip>}>
         <button className="btn_dev" onClick={switchToolsVisibility}><FontAwesomeIcon icon={eyeIcon} /></button>
         </OverlayTrigger>
       </div>
