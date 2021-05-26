@@ -51,7 +51,7 @@ color: white;
 .scroll_down {
     font-size:5rem;
     cursor: pointer;
-    color: #828486;
+    color: #828486 !important;
     z-index: 1;
     animation: wiggle 1s ease-in infinite alternate;
 }

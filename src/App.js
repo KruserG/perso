@@ -58,8 +58,6 @@ const switchToolsVisibility = ()=>{
   
 }
 
-
-
   return (
 
   <div>
@@ -111,8 +109,8 @@ const switchToolsVisibility = ()=>{
     </Div100vh>
 
     
-    <Element name="experiences" className="experiences">
-      
+    <Element name="experiences">
+      <div  className="experiences">
       <div className="head">
         <h1 className="title">{selectedLanguage.experiences.title}</h1>
         <OverlayTrigger placement="left" overlay={<Tooltip>{selectedLanguage.experiences.eyeIconToolTip}</Tooltip>}>
@@ -175,9 +173,9 @@ const switchToolsVisibility = ()=>{
 
         <h1 className="bigText">...</h1>
       </div>
-    
+      </div>
     </Element> 
- 
+    
  
   </div>
 
