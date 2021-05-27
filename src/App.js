@@ -1,10 +1,9 @@
-
 //importing style
 import "./App.css";
 //font-awesome importing
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //solid svg icons
-import { faAngleDoubleDown, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleDown, faEye, faEyeSlash, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 //brands svg icons
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 //react-scroll
@@ -18,49 +17,72 @@ import {useState} from 'react';
 //languages
 import english from './translations/english.json';
 import french from './translations/french.json';
+//logo links
+import logos from './links/logos.json';
 
 function App() {
 
-const logoNode = "https://b.thumbs.redditmedia.com/8RJ1zsSxLbTrSrRAhziwMynfkWVcuFNMXPsLqtGct1o.png";
-const logoPhp = "https://sujanbyanjankar.com.np/wp-content/uploads/2019/03/php.png";
-const logoJquery = "https://habrastorage.org/getpro/habr/post_images/99b/37e/278/99b37e278226b136bac04f85ab8e238c.png";
-const logoPhotoshop = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png";
-const logoIllustrator = "https://cudichis.ro/wp-content/uploads/2021/03/1051px-Adobe_Illustrator_CC_icon.svg.png";
-const logoDiscordJs = "https://discord.js.org/static/logo-square.png";
-const logoBootstrap = "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png";
-
-const projectSkills1 = [{name:"PHP",image:logoPhp},
-                        {name:"Node.js",image:logoNode},
-                        {name:"jQuery",image:logoJquery},
-                        {name:"Discord.js",image:logoDiscordJs},
-                        {name:"Bootstrap",image:logoBootstrap},
-                        {name:"Adobe Photoshop",image:logoPhotoshop},
-                        {name:"Adobe Illustrator",image:logoIllustrator}
+const projectSkills1 = [{name:"PHP",image:logos.logoPhp},
+                        {name:"Node.js",image:logos.logoNode},
+                        {name:"jQuery",image:logos.logoJquery},
+                        {name:"Discord.js",image:logos.logoDiscordJs},
+                        {name:"Bootstrap",image:logos.logoBootstrap},
+                        {name:"Adobe Photoshop",image:logos.logoPhotoshop},
+                        {name:"Adobe Illustrator",image:logos.logoIllustrator}
                       ];
 
-const projectSkills2 = [{name:"PHP",image:logoPhp},
-                        {name:"jQuery",image:logoJquery},
-                        {name:"Bootstrap",image:logoBootstrap},
-                        {name:"Adobe Illustrator",image:logoIllustrator}
+const projectSkills2 = [{name:"PHP",image:logos.logoPhp},
+                        {name:"jQuery",image:logos.logoJquery},
+                        {name:"Bootstrap",image:logos.logoBootstrap},
+                        {name:"Adobe Illustrator",image:logos.logoIllustrator}
                       ];
 
 const [selectedLanguage, setSelectedLanguage] = useState(french);
-const [toolsVisibility, setToolsVisibility] = useState("hidden");
-const [eyeIcon, switchEyeIcon] = useState(faEye);
 
 const switchLanguage = ()=>{
 selectedLanguage === french ?  setSelectedLanguage(english) : setSelectedLanguage(french)
 }
 
+const [toolsVisibility, setToolsVisibility] = useState("hidden");
+const [eyeIcon, switchEyeIcon] = useState(faEye);
+
 const switchToolsVisibility = ()=>{
   toolsVisibility === "visible"  ? setToolsVisibility("hidden") : setToolsVisibility("visible")
-  toolsVisibility === "visible"  ? switchEyeIcon(faEye) : switchEyeIcon(faEyeSlash)
-  
+  toolsVisibility === "visible"  ? switchEyeIcon(faEye) : switchEyeIcon(faEyeSlash) 
 }
 
+const rs = document.querySelector(':root').style;
+const [theme, setTheme] = useState("light");
+const [themeIcon, setThemeIcon] = useState(faMoon);
+
+
+if(theme === "light"){
+  rs.setProperty('--primary-color','#343a40');
+   rs.setProperty('--secondary-color','#828486');
+   rs.setProperty('--third-color','#c5c5c5');
+   rs.setProperty('--background-color','#f5f5f5');
+   rs.setProperty('--text-color','#212529');
+} 
+else{
+   rs.setProperty('--primary-color','#f5f5f5');
+   rs.setProperty('--secondary-color','#828486');
+   rs.setProperty('--third-color','#b8bbbf');
+   rs.setProperty('--background-color','#343a40');
+   rs.setProperty('--text-color','#f5f5f5');
+}
+
+const switchTheme = ()=>{
+  theme === "light"  ? setTheme("dark") : setTheme("light")
+  theme === "light"  ? setThemeIcon(faSun) : setThemeIcon(faMoon) 
+}
   return (
 
   <div>
+
+    <div className="theme-switch">
+      <button className="button" onClick={switchTheme}><FontAwesomeIcon icon={themeIcon} /></button>
+    </div>
+    
 
     <div className="language-switch" onClick={switchLanguage}>
       <button className="button">{selectedLanguage.changeButtonLanguage}</button>
