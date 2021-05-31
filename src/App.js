@@ -13,7 +13,7 @@ import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 //react-div-100vh
 import Div100vh from 'react-div-100vh'
 //react
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 //languages
 import english from './translations/english.json';
 import french from './translations/french.json';
@@ -37,44 +37,67 @@ const projectSkills2 = [{name:"PHP",image:logos.logoPhp},
                         {name:"Adobe Illustrator",image:logos.logoIllustrator}
                       ];
 
-const [selectedLanguage, setSelectedLanguage] = useState(french);
-
-const switchLanguage = ()=>{
-selectedLanguage === french ?  setSelectedLanguage(english) : setSelectedLanguage(french)
+if(!localStorage.getItem("theme")){
+  localStorage.setItem("theme","light")
 }
+
+if(!localStorage.getItem("language")){
+  localStorage.setItem("language","french")
+}
+
+const [selectedLanguage, setSelectedLanguage] = useState(()=> localStorage.getItem("language") === "french" ? french : english );
 
 const [toolsVisibility, setToolsVisibility] = useState("hidden");
 const [eyeIcon, switchEyeIcon] = useState(faEye);
+
+const [theme, setTheme] = useState(localStorage.getItem("theme"));
+const [themeIcon, setThemeIcon] = useState(()=> theme === "light" ? faMoon : faSun);
+
+const switchLanguage = ()=>{
+  if(selectedLanguage === french){
+    setSelectedLanguage(english)
+    localStorage.setItem("language","english")
+  }else{
+    setSelectedLanguage(french)
+    localStorage.setItem("language","french")
+  }
+}
 
 const switchToolsVisibility = ()=>{
   toolsVisibility === "visible"  ? setToolsVisibility("hidden") : setToolsVisibility("visible")
   toolsVisibility === "visible"  ? switchEyeIcon(faEye) : switchEyeIcon(faEyeSlash) 
 }
 
-const rs = document.querySelector(':root').style;
-const [theme, setTheme] = useState("light");
-const [themeIcon, setThemeIcon] = useState(faMoon);
-
-
-if(theme === "light"){
-  rs.setProperty('--primary-color','#343a40');
-   rs.setProperty('--secondary-color','#828486');
-   rs.setProperty('--third-color','#c5c5c5');
-   rs.setProperty('--background-color','#f5f5f5');
-   rs.setProperty('--text-color','#212529');
-} 
-else{
-   rs.setProperty('--primary-color','#f5f5f5');
-   rs.setProperty('--secondary-color','#828486');
-   rs.setProperty('--third-color','#b8bbbf');
-   rs.setProperty('--background-color','#343a40');
-   rs.setProperty('--text-color','#f5f5f5');
-}
-
 const switchTheme = ()=>{
-  theme === "light"  ? setTheme("dark") : setTheme("light")
-  theme === "light"  ? setThemeIcon(faSun) : setThemeIcon(faMoon) 
+if(theme === "light"){
+  localStorage.setItem("theme","dark")
+  setTheme("dark")
+  setThemeIcon(faSun)
+}else{
+  localStorage.setItem("theme","light")
+  setTheme("light")
+  setThemeIcon(faMoon)
 }
+}
+
+useEffect(()=>{
+  const rs = document.querySelector(':root').style;
+  if(theme === "light"){
+    rs.setProperty('--primary-color','#343a40');
+    rs.setProperty('--secondary-color','#828486');
+    rs.setProperty('--third-color','#c5c5c5');
+    rs.setProperty('--background-color','#f5f5f5');
+    rs.setProperty('--text-color','#212529');
+  } 
+  else{
+    rs.setProperty('--primary-color','#f5f5f5');
+    rs.setProperty('--secondary-color','#828486');
+    rs.setProperty('--third-color','#b8bbbf');
+    rs.setProperty('--background-color','#343a40');
+    rs.setProperty('--text-color','#f5f5f5');
+  }
+}, [theme])
+
   return (
 
   <div>
