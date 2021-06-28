@@ -165,7 +165,7 @@ useEffect(()=>{
 
       <div className="body">
 
-        <a className="link" href="https://sunsetradio.me" target="_blank" rel="noreferrer">
+        <a className="link" href="https://github.com/KruserG/sunsetradio-website" target="_blank" rel="noreferrer">
           <div className="item">
           <img className="logo" src="https://imgur.com/wBUzy2f.jpg" alt="sunsetradio-logo"/>
           <h2 className="title">{selectedLanguage.experiences.project0.title}</h2>
@@ -186,7 +186,7 @@ useEffect(()=>{
           </div>
         </div>
         </a>
-        <a className="link" href="https://tcorner.net" target="_blank" rel="noreferrer">
+        <a className="link" href="https://github.com/KruserG/tcorner-website" target="_blank" rel="noreferrer">
         <div className="item">
           <img className="logo" src="https://st3.depositphotos.com/3096625/18861/v/600/depositphotos_188612498-stock-illustration-monogram-tc-logo-hipster-initials.jpg" alt="sunsetradio-logo"/>
           <h2 className="title">{selectedLanguage.experiences.project1.title}</h2>
