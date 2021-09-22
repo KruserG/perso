@@ -58,9 +58,20 @@ color: var(--background-color);
     min-width: 5rem;
 }
 
+.aboutme{
+    padding: 3rem;
+}
 
-.bigText{
-    font-size: 8vw;
+.bigHello{
+    font-size: 5rem;
+}
+
+.myNameIs{
+    font-size: 2rem;
+}
+
+.whoAmI{
+    font-size: 1rem;
 }
 
 .wave{
@@ -103,13 +114,11 @@ color: var(--background-color);
     }
 }
 .main-page{
+    
     padding-inline: 22%;
     background-color: var(--background-color);
 }
 
-.aboutme{
-    max-width: 50%;
-}
 
 .social-links svg{
     color: var(--primary-color);
@@ -122,7 +131,7 @@ color: var(--background-color);
 }
 
 .experiences .head{
-padding-inline: 5rem;
+padding-inline: 2rem;
 display: flex;
 justify-content: space-between;
 }
@@ -191,11 +200,11 @@ justify-content: space-between;
 
 .experiences .body .item{
     background-color: var(--background-color);
-    width: 45rem;
+    width: 90vw; 
+    min-height: 28vh;
     border-radius: 5px;
     margin:1rem;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 24%);
-    height: 17rem;
     transition: all 0.3s ease-out ;
 }
 
@@ -212,11 +221,12 @@ justify-content: space-between;
 
 
 .experiences .body .item:hover::before {
-   height: 17rem;
+   height: 28vh;
 } 
 
 .item .logo{
-    height: 15rem;
+    height: 25vw;
+    max-height: 15rem;
     float: left;
     margin: 1rem;
 }
@@ -226,13 +236,14 @@ justify-content: space-between;
 }
 
 .item .description{
-    min-height: 8rem;
     padding-inline:1rem;
+    font-size: large;
 }
 
 .tools{
     display: flex;
     align-items: flex-end;
+    padding-bottom: 0.5rem;
 }
 
 .tools .tool-logo{
@@ -254,72 +265,5 @@ justify-content: space-between;
 
 
 
-/* Portrait iPhone */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (orientation: portrait) { 
-    .main-page{
-        padding-inline: 0%;
-    }
-    .main-page .bigText{
-        font-size: 10rem;
-    }
-    .main-page h1{
-        font-size: 3rem;
-    }
-    .main-page h6{
-        font-size: 2rem;
-    }
-
-    .aboutme{
-        padding-top:5rem;
-        max-width: 80%;
-    }
-
-    .scroll_down svg{
-        font-size: 8rem;
-    }
-
-    .social-links svg{
-        margin-block: 4rem;
-        margin-inline: 2rem;
-        font-size: 8rem;
-    }
-
-    .quote h4{
-        font-size: 3rem;  
-    }
-
-    .quote .bigText{
-        font-size: 20rem;
-    }
-
-    .language-switch .button{
-        
-        font-size: 2rem;
-        margin: 1rem;
-    }
-
-    .head .btn_dev{
-        font-size: 3rem;
-    }
-    .theme-switch .button{
-        font-size:3rem;
-    }
-}
-
-/* Landscape compatibility */
-
-@media only screen 
-  and (max-device-height: 800px) 
-  and (orientation: landscape){
-
-    .scroll_down{
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 0.8rem;
-    }
-  }
 
 

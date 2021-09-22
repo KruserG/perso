@@ -116,10 +116,10 @@ useEffect(()=>{
       <div className="d-flex justify-content-center">
 
         <div className="aboutme">
-            <h1 className="bigText">{selectedLanguage.mainPage.welcome}</h1>
+            <h1 className="bigHello">{selectedLanguage.mainPage.welcome}</h1>
             <h1 className="myNameIs">{selectedLanguage.mainPage.introduction}</h1>
             <br/>
-            <h6>{selectedLanguage.mainPage.description}</h6>
+            <h6 className="whoAmI">{selectedLanguage.mainPage.description}</h6>
         </div>
 
       </div>
