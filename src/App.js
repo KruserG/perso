@@ -47,8 +47,8 @@ if(!localStorage.getItem("language")){
 
 const [selectedLanguage, setSelectedLanguage] = useState(()=> localStorage.getItem("language") === "french" ? french : english );
 
-const [toolsVisibility, setToolsVisibility] = useState("hidden");
-const [eyeIcon, switchEyeIcon] = useState(faEye);
+const [toolsVisibility, setToolsVisibility] = useState("visible");
+const [eyeIcon, switchEyeIcon] = useState(faEyeSlash);
 
 const [theme, setTheme] = useState(localStorage.getItem("theme"));
 const [themeIcon, setThemeIcon] = useState(()=> theme === "light" ? faMoon : faSun);

@@ -59,15 +59,15 @@ color: var(--background-color);
 }
 
 .aboutme{
-    padding: 3rem;
+    margin: 3rem;
 }
 
 .bigHello{
-    font-size: 5rem;
+    font-size: 7rem;
 }
 
 .myNameIs{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .whoAmI{
@@ -225,8 +225,7 @@ justify-content: space-between;
 } 
 
 .item .logo{
-    height: 25vw;
-    max-height: 15rem;
+    max-height: 25vh;
     float: left;
     margin: 1rem;
 }
@@ -243,7 +242,7 @@ justify-content: space-between;
 .tools{
     display: flex;
     align-items: flex-end;
-    padding-bottom: 0.5rem;
+    padding: 1rem;
 }
 
 .tools .tool-logo{
