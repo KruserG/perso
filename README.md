@@ -1,6 +1,21 @@
-# www.omar.bio
 
-Hello.
-I'm Omar Boulbaze.
 
-I am a WEB developer. I like to follow and participate in the evolution of projects, from conception to publication. While supporting the community of developers by contributing to open-source projects.
+# About This Project
+
+![Logo](https://imgur.com/PgT2wWz.png)
+
+
+
+
+Welcome to my personal website, here you'll find :
+- Personal projects
+- Social media links
+- About me section
+
+## Built With
+- [Node.js](https://nodejs.org/en/)
+- [React.js](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com/)
+
+
+
