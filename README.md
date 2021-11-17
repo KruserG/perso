@@ -2,7 +2,7 @@
 
 # About This Project
 
-![Logo](https://imgur.com/PgT2wWz.png)
+[![Logo](https://imgur.com/PgT2wWz.png)](https://easynps.ca)
 
 
 
