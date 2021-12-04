@@ -17,24 +17,30 @@ import {useEffect, useState} from 'react';
 //languages
 import english from './translations/english.json';
 import french from './translations/french.json';
-//logo links
-import logos from './links/logos.json';
+//logos
+import nodejsLogo from './logos/nodejs.png';
+import phpLogo from './logos/php.png';
+import jqueryLogo from './logos/jquery.png';
+import discordjsLogo from './logos/discordjs.png';
+import bootstrapLogo from './logos/bootstrap.png';
+import photoshopLogo from './logos/photoshop.png';
+import illustratorLogo from './logos/illustrator.png';
 
 function App() {
 
-const projectSkills1 = [{name:"PHP",image:logos.logoPhp},
-                        {name:"Node.js",image:logos.logoNode},
-                        {name:"jQuery",image:logos.logoJquery},
-                        {name:"Discord.js",image:logos.logoDiscordJs},
-                        {name:"Bootstrap",image:logos.logoBootstrap},
-                        {name:"Adobe Photoshop",image:logos.logoPhotoshop},
-                        {name:"Adobe Illustrator",image:logos.logoIllustrator}
+const projectSkills1 = [{name:"PHP",image:phpLogo},
+                        {name:"Node.js",image:nodejsLogo},
+                        {name:"jQuery",image: jqueryLogo},
+                        {name:"Discord.js",image:discordjsLogo},
+                        {name:"Bootstrap",image:bootstrapLogo},
+                        {name:"Adobe Photoshop",image:photoshopLogo},
+                        {name:"Adobe Illustrator",image:illustratorLogo}
                       ];
 
-const projectSkills2 = [{name:"PHP",image:logos.logoPhp},
-                        {name:"jQuery",image:logos.logoJquery},
-                        {name:"Bootstrap",image:logos.logoBootstrap},
-                        {name:"Adobe Illustrator",image:logos.logoIllustrator}
+const projectSkills2 = [{name:"PHP",image:phpLogo},
+                        {name:"jQuery",image:jqueryLogo},
+                        {name:"Bootstrap",image:bootstrapLogo},
+                        {name:"Adobe Illustrator",image:illustratorLogo}
                       ];
 
 if(!localStorage.getItem("theme")){
@@ -133,13 +139,7 @@ useEffect(()=>{
       </div>
 
       <div className="d-flex justify-content-center">
-        <Link
-        activeClass="active" 
-        to="experiences" 
-        smooth={true}
-        duration={1000}
-        className="scroll_down"
-        >
+        <Link className="scroll_down" activeClass="active" to="experiences" smooth={true} duration={1000}>
           <span><FontAwesomeIcon icon={faAngleDoubleDown} /></span>
         </Link>
       </div>
