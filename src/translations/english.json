@@ -15,6 +15,10 @@
         "project1":{
             "title":"Technological Corner",
             "description":"TCorner is a school team project in which I was in charge of developing a static website for presentation purposes."
+        },
+        "project2":{
+            "title":"Easy NPS",
+            "description":"Easy NPS is tool that makes filling online surveys easier for customers."
         }
     },
     "quote":{

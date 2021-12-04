@@ -15,6 +15,10 @@
         "project1":{
             "title":"Technological Corner",
             "description":"TCorner est un projet scolaire en équipe dans lequel j'étais en charge du développement d'un site web statique dans le but d'introduire notre équipe."
+        },
+        "project2":{
+            "title":"Easy NPS",
+            "description":"Easy NPS est un outil permettant de faciliter le remplissage des sondages en ligne."
         }
     },
     "quote":{

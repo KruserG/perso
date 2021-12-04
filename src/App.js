@@ -19,12 +19,14 @@ import english from './translations/english.json';
 import french from './translations/french.json';
 //logos
 import nodejsLogo from './logos/nodejs.png';
+import reactLogo from './logos/react.png';
 import phpLogo from './logos/php.png';
 import jqueryLogo from './logos/jquery.png';
 import discordjsLogo from './logos/discordjs.png';
 import bootstrapLogo from './logos/bootstrap.png';
 import photoshopLogo from './logos/photoshop.png';
 import illustratorLogo from './logos/illustrator.png';
+import mongoLogo from './logos/mongodb.png';
 
 function App() {
 
@@ -41,6 +43,11 @@ const projectSkills2 = [{name:"PHP",image:phpLogo},
                         {name:"jQuery",image:jqueryLogo},
                         {name:"Bootstrap",image:bootstrapLogo},
                         {name:"Adobe Illustrator",image:illustratorLogo}
+                      ];
+
+const projectSkills3 = [{name:"Node.js",image:nodejsLogo},
+                        {name:"React.js",image:reactLogo},
+                        {name:"MongoDB",image:mongoLogo}
                       ];
 
 if(!localStorage.getItem("theme")){
@@ -162,49 +169,68 @@ useEffect(()=>{
       </div>
 
       <div className="body">
-
-        <a className="link" href="https://github.com/KruserG/sunsetradio-website" target="_blank" rel="noreferrer">
+        <a className="link" href="https://github.com/KruserG/easynps" target="_blank" rel="noreferrer">
+            <div className="item">
+            <img className="logo" src="https://www.easynps.ca/static/media/easyNpsLogo.7c7e088e.png" alt="easynps-logo"/>
+            <h2 className="title">{selectedLanguage.experiences.project2.title}</h2>
+            <div className="description">
+            <p>{selectedLanguage.experiences.project2.description}</p>
+            </div>
+            <div className="tools" style={{visibility : toolsVisibility}}>
+            
+            {
+              projectSkills3.map((skill)=>{
+                return(
+                <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+                <img className="tool-logo"  src={skill.image} alt={skill.name}/>
+                </OverlayTrigger>
+                );
+              })
+            }           
+            </div>
+          </div>
+          </a>
+          <a className="link" href="https://github.com/KruserG/sunsetradio-website" target="_blank" rel="noreferrer">
+            <div className="item">
+            <img className="logo" src="https://imgur.com/wBUzy2f.jpg" alt="sunsetradio-logo"/>
+            <h2 className="title">{selectedLanguage.experiences.project0.title}</h2>
+            <div className="description">
+            <p>{selectedLanguage.experiences.project0.description}</p>
+            </div>
+            <div className="tools" style={{visibility : toolsVisibility}}>
+            
+            {
+              projectSkills1.map((skill)=>{
+                return(
+                <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+                <img className="tool-logo"  src={skill.image} alt={skill.name}/>
+                </OverlayTrigger>
+                );
+              })
+            }           
+            </div>
+          </div>
+          </a>
+          <a className="link" href="https://github.com/KruserG/tcorner-website" target="_blank" rel="noreferrer">
           <div className="item">
-          <img className="logo" src="https://imgur.com/wBUzy2f.jpg" alt="sunsetradio-logo"/>
-          <h2 className="title">{selectedLanguage.experiences.project0.title}</h2>
-          <div className="description">
-          <p>{selectedLanguage.experiences.project0.description}</p>
+            <img className="logo" src="https://st3.depositphotos.com/3096625/18861/v/600/depositphotos_188612498-stock-illustration-monogram-tc-logo-hipster-initials.jpg" alt="sunsetradio-logo"/>
+            <h2 className="title">{selectedLanguage.experiences.project1.title}</h2>
+            <div className="description">
+            <p>{selectedLanguage.experiences.project1.description}</p>
+            </div>
+            <div className="tools" style={{visibility : toolsVisibility}}>
+            {
+              projectSkills2.map((skill)=>{
+                return(
+                <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+                <img className="tool-logo" src={skill.image} alt={skill.name}/>
+                </OverlayTrigger>
+                );
+              })
+            }  
+            </div>
           </div>
-          <div className="tools" style={{visibility : toolsVisibility}}>
-           
-           {
-             projectSkills1.map((skill)=>{
-              return(
-              <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
-              <img className="tool-logo"  src={skill.image} alt={skill.name}/>
-              </OverlayTrigger>
-              );
-             })
-           }           
-          </div>
-        </div>
-        </a>
-        <a className="link" href="https://github.com/KruserG/tcorner-website" target="_blank" rel="noreferrer">
-        <div className="item">
-          <img className="logo" src="https://st3.depositphotos.com/3096625/18861/v/600/depositphotos_188612498-stock-illustration-monogram-tc-logo-hipster-initials.jpg" alt="sunsetradio-logo"/>
-          <h2 className="title">{selectedLanguage.experiences.project1.title}</h2>
-          <div className="description">
-          <p>{selectedLanguage.experiences.project1.description}</p>
-          </div>
-          <div className="tools" style={{visibility : toolsVisibility}}>
-          {
-             projectSkills2.map((skill)=>{
-              return(
-              <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
-              <img className="tool-logo" src={skill.image} alt={skill.name}/>
-              </OverlayTrigger>
-              );
-             })
-           }  
-          </div>
-        </div>
-        </a>
-        
+          </a>
       </div>
 
       <div className="quote">
