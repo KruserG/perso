@@ -7,18 +7,18 @@
     },
     "experiences":{
         "title":"Mes projets récents",
-        "eyeIconToolTip":"Outils et librairies",
-        "project0":{
+        "learnMore":"En savoir plus",
+        "sunsetradio":{
             "title":"Sunset Radio",
             "description":"Sunset Radio est une radio francophone communautaire basé sur le web. J'ai travaillé sur le développement du site internet ainsi que la conception d'un bot musical sur une plateforme de communication nommée Discord."
         },
-        "project1":{
+        "tcorner":{
             "title":"Technological Corner",
-            "description":"TCorner est un projet scolaire en équipe dans lequel j'étais en charge du développement d'un site web statique dans le but d'introduire notre équipe."
+            "description":"TCorner est un projet scolaire en équipe, j'étais en charge du développement d'un site web statique contenant des informations générales sur la nature du projet, ainsi que la liste de tous les membres de l'équipe."
         },
-        "project2":{
+        "easynps":{
             "title":"Easy NPS",
-            "description":"Easy NPS est un outil permettant de faciliter le remplissage des sondages sur la satisfaction des clients dans les magasins de détails."
+            "description":"Easy NPS est un outil permettant de faciliter le remplissage des sondages sur la satisfaction des clients dans les magasins de détails. Les clients peuvent facilement accéder aux sondages en scannant un code QR généré par un associé aux ventes."
         }
     },
     "quote":{

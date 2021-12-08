@@ -3,7 +3,7 @@ import "./App.css";
 //font-awesome importing
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //solid svg icons
-import { faAngleDoubleDown, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleDown, faSun, faMoon, faCode } from '@fortawesome/free-solid-svg-icons'
 //brands svg icons
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 //react-scroll
@@ -37,7 +37,7 @@ import circuit from './logos/circuit.png'
 
 function App() {
 
-const projectSkills1 = [{name:"PHP",image:phpLogo},
+const sunsetradioTools = [{name:"PHP",image:phpLogo},
                         {name:"Node.js",image:nodejsLogo},
                         {name:"jQuery",image: jqueryLogo},
                         {name:"Discord.js",image:discordjsLogo},
@@ -46,13 +46,13 @@ const projectSkills1 = [{name:"PHP",image:phpLogo},
                         {name:"Adobe Illustrator",image:illustratorLogo}
                       ];
 
-const projectSkills2 = [{name:"PHP",image:phpLogo},
+const tcornerTools = [{name:"PHP",image:phpLogo},
                         {name:"jQuery",image:jqueryLogo},
                         {name:"Bootstrap",image:bootstrapLogo},
                         {name:"Adobe Illustrator",image:illustratorLogo}
                       ];
 
-const projectSkills3 = [{name:"Node.js",image:nodejsLogo},
+const easynpsTools = [{name:"Node.js",image:nodejsLogo},
                         {name:"React.js",image:reactLogo},
                         {name:"MongoDB",image:mongoLogo}
                       ];
@@ -118,7 +118,6 @@ useEffect(()=>{
       <button className="language-switch" onClick={switchLanguage} >{selectedLanguage.changeButtonLanguage}</button>
   </div>
  
-    
 
     <Div100vh className="main-page">
 
@@ -134,7 +133,7 @@ useEffect(()=>{
           <a className="btn text-dark" href="https://twitter.com/omarboulbaze" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faTwitter} /></a> 
       </div>
 
-      <Link className="scroll_down reveal-animation delay-3s" activeClass="active" to="experiences" smooth={true} duration={500}>
+      <Link className="scroll_down" activeClass="active" to="experiences" smooth={true} duration={500}>
         <span><FontAwesomeIcon icon={faAngleDoubleDown} /></span>
       </Link>
       
@@ -146,67 +145,33 @@ useEffect(()=>{
     <Element name="experiences">
       <div  className="experiences">
       <div className="head">
-        <h1 className="title">{selectedLanguage.experiences.title}</h1>
+        <h1 className="title"><FontAwesomeIcon icon={faCode}/> {selectedLanguage.experiences.title}</h1>
       </div>
 
       <div className="body">
-        <a className="link" href="https://github.com/KruserG/easynps" target="_blank" rel="noreferrer">
-            <div className="item">
-              <img className="logo" src={easynpsLogo} alt="easynps-logo"/>
-              <div className="project_description">
-                <h2>{selectedLanguage.experiences.project2.title}</h2>
-                <p>{selectedLanguage.experiences.project2.description}</p>
-              </div>
-              <div className="tools">
-                {   projectSkills3.map((skill)=>{ 
-                  return(
-                    <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
-                    <img className="tool-logo"  src={skill.image} alt={skill.name}/>
-                    </OverlayTrigger>
-                    );
-                  })
-                }           
-              </div>  
-            </div>
-          </a>
-          <a className="link" href="https://github.com/KruserG/sunsetradio-website" target="_blank" rel="noreferrer">
-            <div className="item">
-              <img className="logo" src={sunsetradioLogo} alt="sunsetradio-logo"/>
-              <div className="project_description">
-                <h2>{selectedLanguage.experiences.project0.title}</h2>
-                <p>{selectedLanguage.experiences.project0.description}</p>
-              </div>
-              <div className="tools">
-              {   projectSkills1.map((skill)=>{ 
-                return(
-                  <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
-                  <img className="tool-logo"  src={skill.image} alt={skill.name}/>
-                  </OverlayTrigger>
-                  );
-                })
-              }           
-              </div>
-            </div>
-          </a>
-          <a className="link" href="https://github.com/KruserG/tcorner-website" target="_blank" rel="noreferrer">
-            <div className="item">
-              <img className="logo" src={tcornerLogo} alt="tcorner-logo"/>
-              <div className="project_description">
-                <h2>{selectedLanguage.experiences.project1.title}</h2>
-                <p>{selectedLanguage.experiences.project1.description}</p>
-              </div>
-              <div className="tools">
-              {   projectSkills2.map((skill)=>{ 
-                return(
-                  <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
-                  <img className="tool-logo"  src={skill.image} alt={skill.name}/>
-                  </OverlayTrigger>
-                  );
-                })
-              }           
-              </div>
-           </div>
-          </a>
+        <Project 
+        logo={easynpsLogo}
+        text={selectedLanguage.experiences.easynps}
+        projectTools={easynpsTools}
+        language={selectedLanguage}
+        link={"https://github.com/KruserG/easynps"}
+        />
+
+        <Project 
+        logo={sunsetradioLogo}
+        text={selectedLanguage.experiences.sunsetradio}
+        projectTools={sunsetradioTools}
+        language={selectedLanguage}
+        link={"https://github.com/KruserG/sunsetradio-website"}
+        />
+
+        <Project 
+        logo={tcornerLogo}
+        text={selectedLanguage.experiences.tcorner}
+        projectTools={tcornerTools}
+        language={selectedLanguage}
+        link={"https://github.com/KruserG/tcorner-website"}
+        />
       </div>
 
       <div className="quote">
@@ -215,7 +180,6 @@ useEffect(()=>{
         <br/>
         {selectedLanguage.quote.quote0.author}
         </h4>
-
         <h1 className="bigText">...</h1>
       </div>
       </div>
@@ -226,6 +190,31 @@ useEffect(()=>{
 
   );
 
+}
+
+function Project(props){
+  return(
+      <div className="item">
+        <img className="logo" src={props.logo} alt="logo"/>
+        <div className="project_description">
+          <h2>{props.text.title}</h2>
+          <p>{props.text.description}</p>
+        </div>
+        <div className="tools">
+          {   props.projectTools.map((skill)=>{ 
+            return(
+              <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+              <img className="tool-logo"  src={skill.image} alt={skill.name}/>
+              </OverlayTrigger>
+              );
+            })
+          }           
+        </div> 
+        <div className="learnMore-container">
+        <button className="learnMore-button" onClick={()=> window.open(props.link, '_blank')}>{props.language.experiences.learnMore}</button>
+        </div>
+      </div>
+  )
 }
 
 export default App;
