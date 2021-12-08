@@ -134,7 +134,7 @@ useEffect(()=>{
           <a className="btn text-dark" href="https://twitter.com/omarboulbaze" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faTwitter} /></a> 
       </div>
 
-      <Link className="scroll_down" activeClass="active" to="experiences">
+      <Link className="scroll_down" activeClass="active" to="experiences" smooth={true} duration={500}>
         <span><FontAwesomeIcon icon={faAngleDoubleDown} /></span>
       </Link>
       
@@ -158,16 +158,16 @@ useEffect(()=>{
                 <p>{selectedLanguage.experiences.project2.description}</p>
               </div>
               <div className="tools">
-              {   projectSkills3.map((skill)=>{ 
-                return(
-                  <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
-                  <img className="tool-logo"  src={skill.image} alt={skill.name}/>
-                  </OverlayTrigger>
-                  );
-                })
-              }           
-              </div>
-          </div>
+                {   projectSkills3.map((skill)=>{ 
+                  return(
+                    <OverlayTrigger key={skill.name} placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{skill.name}</Tooltip>}>
+                    <img className="tool-logo"  src={skill.image} alt={skill.name}/>
+                    </OverlayTrigger>
+                    );
+                  })
+                }           
+              </div>  
+            </div>
           </a>
           <a className="link" href="https://github.com/KruserG/sunsetradio-website" target="_blank" rel="noreferrer">
             <div className="item">
@@ -186,7 +186,7 @@ useEffect(()=>{
                 })
               }           
               </div>
-          </div>
+            </div>
           </a>
           <a className="link" href="https://github.com/KruserG/tcorner-website" target="_blank" rel="noreferrer">
             <div className="item">
@@ -205,12 +205,8 @@ useEffect(()=>{
                 })
               }           
               </div>
-          </div>
+           </div>
           </a>
-          
-          
-         
-         
       </div>
 
       <div className="quote">
