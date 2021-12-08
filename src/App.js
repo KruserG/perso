@@ -62,7 +62,7 @@ if(!localStorage.getItem("theme")){
 }
 
 if(!localStorage.getItem("language")){
-  localStorage.setItem("language","french")
+  localStorage.setItem("language","english")
 }
 
 const [selectedLanguage, setSelectedLanguage] = useState(()=> localStorage.getItem("language") === "french" ? french : english );
@@ -123,18 +123,18 @@ useEffect(()=>{
     <Div100vh className="main-page">
 
       <div className="aboutMe-container">
-          <h1 style={{fontSize:"5rem"}}>{selectedLanguage.mainPage.welcome}</h1>
-          <h4 style={{fontSize:"1.5rem"}}>{selectedLanguage.mainPage.introduction}</h4>
-          <h6 style={{fontSize:"1rem"}}>{selectedLanguage.mainPage.description}</h6>
+          <h1 className="reveal-animation" style={{fontSize:"5rem"}}>{selectedLanguage.mainPage.welcome}</h1>
+          <h4 className="reveal-animation delay-1s" style={{fontSize:"1.5rem"}}>{selectedLanguage.mainPage.introduction}</h4>
+          <h6 className="reveal-animation delay-2s" style={{fontSize:"1rem"}}>{selectedLanguage.mainPage.description}</h6>
       </div>
 
-      <div className="social-container social-links">
+      <div className="social-container social-links reveal-animation delay-3s">
           <a className="btn text-dark" href="https://www.linkedin.com/in/omarboulbaze/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a>
           <a className="btn text-dark" href="https://github.com/KruserG" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
           <a className="btn text-dark" href="https://twitter.com/omarboulbaze" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faTwitter} /></a> 
       </div>
 
-      <Link className="scroll_down" activeClass="active" to="experiences" smooth={true} duration={500}>
+      <Link className="scroll_down reveal-animation delay-3s" activeClass="active" to="experiences" smooth={true} duration={500}>
         <span><FontAwesomeIcon icon={faAngleDoubleDown} /></span>
       </Link>
       

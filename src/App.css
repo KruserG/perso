@@ -68,6 +68,35 @@ color: var(--background-color);
     text-align: center;
 }
 
+.reveal-animation{
+    opacity: 0;
+    animation:  revealText 1s forwards ;
+}
+.reveal-animation.delay-1s{
+    opacity: 0;
+    animation:  revealText 1s 1s forwards ;
+}
+
+.reveal-animation.delay-2s{
+    opacity: 0;
+    animation:  revealText 1s 2s forwards ;
+}
+.reveal-animation.delay-3s{
+    opacity: 0;
+    animation:  revealText 1s 3s forwards ;
+}
+
+@keyframes revealText {
+    0%{
+        clip-path: polygon(0 0, 100% 0, 91% 0, 9% 0);
+    }
+    100%{
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+
 .social-container{
     display: flex;
     justify-content: center;
@@ -89,6 +118,7 @@ color: var(--background-color);
     color: var(--secondary-color) !important;
     z-index: 1;
     animation: wiggle 1s ease-in infinite alternate;
+    transition: all 0.3s;
 }
 @keyframes wiggle {
     100%{
@@ -97,12 +127,14 @@ color: var(--background-color);
 }
 .scroll_down :hover{
     color: var(--primary-color);
+    transition: all 0.3s;
 }
 
 
 .circuit-image{
     opacity: 0.05;
     animation: rotate 30s linear infinite;
+    -webkit-user-drag: none;
 }
 @keyframes rotate {
     100%{
@@ -113,7 +145,7 @@ color: var(--background-color);
 .experiences{
     background-color: var(--primary-color) ;
     padding: 1rem;
-    box-shadow: 0 -10px 10px rgb(0 0 0 / 24%);
+    box-shadow: 0 -10px 25px rgb(0 0 0 / 24%);
 }
 
 .experiences .head{
@@ -127,7 +159,7 @@ justify-content:center;
     content: "";
     position: relative;
     display: block;
-    width: 70px;
+    width: 230px;
     height: 4px;
     background-color: var(--secondary-color);
     top:55px;
@@ -138,17 +170,17 @@ justify-content:center;
     content: "";
     position: relative;
     display: block;
-    width: 100px;
+    width: 180px;
     height: 4px;
     background-color: var(--third-color);
     top:10px;
     transition: all .4s ease-in-out;
 }
 .experiences .head:hover > .title::before{
-    width: 100px;
+    width: 180px;
 }
 .experiences .head:hover > .title::after{
-    width: 70px;
+    width: 230px;
 }
 
 .experiences .body {
