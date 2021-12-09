@@ -129,7 +129,7 @@ useEffect(()=>{
 
       <div className="social-container social-links reveal-animation delay-3s">
           <a className="btn text-dark" href="https://www.linkedin.com/in/omarboulbaze/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a>
-          <a className="btn text-dark" href="https://github.com/KruserG" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
+          <a className="btn text-dark" href="https://github.com/omarboulbaze" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
           <a className="btn text-dark" href="https://twitter.com/omarboulbaze" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faTwitter} /></a> 
       </div>
 
@@ -154,7 +154,7 @@ useEffect(()=>{
         text={selectedLanguage.experiences.easynps}
         projectTools={easynpsTools}
         language={selectedLanguage}
-        link={"https://github.com/KruserG/easynps"}
+        link={"https://github.com/omarboulbaze/easynps"}
         />
 
         <Project 
@@ -162,7 +162,7 @@ useEffect(()=>{
         text={selectedLanguage.experiences.sunsetradio}
         projectTools={sunsetradioTools}
         language={selectedLanguage}
-        link={"https://github.com/KruserG/sunsetradio-website"}
+        link={"https://github.com/omarboulbaze/sunsetradio-website"}
         />
 
         <Project 
@@ -170,7 +170,7 @@ useEffect(()=>{
         text={selectedLanguage.experiences.tcorner}
         projectTools={tcornerTools}
         language={selectedLanguage}
-        link={"https://github.com/KruserG/tcorner-website"}
+        link={"https://github.com/omarboulbaze/tcorner-website"}
         />
       </div>
 
