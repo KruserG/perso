@@ -1,5 +1,5 @@
 //importing style
-import "./App.css";
+import "./Main.css";
 //font-awesome importing
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //solid svg icons
@@ -15,35 +15,33 @@ import Div100vh from 'react-div-100vh'
 //react
 import {useEffect, useState} from 'react';
 //languages
-import english from './translations/english.json';
-import french from './translations/french.json';
+import english from '../../translations/english.json';
+import french from '../../translations/french.json';
 //projects logos
-import easynpsLogo from './logos/easynpsLogo.jpg'
-import sunsetradioLogo from './logos/sunsetradioLogo.jpg'
-import tcornerLogo from './logos/tcornerLogo.jpg'
+import easynpsLogo from '../../images/logos/easynpsLogo.jpg'
+import sunsetradioLogo from '../../images/logos/sunsetradioLogo.jpg'
+import tcornerLogo from '../../images/logos/tcornerLogo.jpg'
 //technologies logos
-import nodejsLogo from './logos/nodejs.png';
-import reactLogo from './logos/react.png';
-import phpLogo from './logos/php.png';
-import jqueryLogo from './logos/jquery.png';
-import discordjsLogo from './logos/discordjs.png';
-import bootstrapLogo from './logos/bootstrap.png';
-import photoshopLogo from './logos/photoshop.png';
-import illustratorLogo from './logos/illustrator.png';
-import mongoLogo from './logos/mongodb.png';
+import nodejsLogo from '../../images/logos/nodejs.png';
+import reactLogo from '../../images/logos/react.png';
+import phpLogo from '../../images/logos/php.png';
+import jqueryLogo from '../../images/logos/jquery.png';
+import discordjsLogo from '../../images/logos/discordjs.png';
+import bootstrapLogo from '../../images/logos/bootstrap.png';
+import photoshopLogo from '../../images/logos/photoshop.png';
+import illustratorLogo from '../../images/logos/illustrator.png';
+import mongoLogo from '../../images/logos/mongodb.png';
 //image
-import circuit from './logos/circuit.png'
+import circuit from '../../images/logos/circuit.png'
 
 
 function App() {
 
 const sunsetradioTools = [{name:"PHP",image:phpLogo},
-                        {name:"Node.js",image:nodejsLogo},
                         {name:"jQuery",image: jqueryLogo},
                         {name:"Discord.js",image:discordjsLogo},
                         {name:"Bootstrap",image:bootstrapLogo},
-                        {name:"Adobe Photoshop",image:photoshopLogo},
-                        {name:"Adobe Illustrator",image:illustratorLogo}
+                        {name:"Adobe Photoshop",image:photoshopLogo}
                       ];
 
 const tcornerTools = [{name:"PHP",image:phpLogo},
@@ -96,16 +94,12 @@ useEffect(()=>{
   if(theme === "light"){
     rs.setProperty('--primary-color','#343a40');
     rs.setProperty('--secondary-color','#828486');
-    rs.setProperty('--third-color','#c5c5c5');
     rs.setProperty('--background-color','#f5f5f5');
-    rs.setProperty('--text-color','#212529');
   } 
   else{
     rs.setProperty('--primary-color','#f5f5f5');
     rs.setProperty('--secondary-color','#828486');
-    rs.setProperty('--third-color','#b8bbbf');
     rs.setProperty('--background-color','#343a40');
-    rs.setProperty('--text-color','#f5f5f5');
   }
 }, [theme])
 
@@ -143,7 +137,7 @@ useEffect(()=>{
 
     
     <Element name="experiences">
-      <div  className="experiences">
+      <div  className="experiences" id="exp">
       <div className="head">
         <h1 className="title"><FontAwesomeIcon icon={faCode}/> {selectedLanguage.experiences.title}</h1>
       </div>
@@ -154,7 +148,7 @@ useEffect(()=>{
         text={selectedLanguage.experiences.easynps}
         projectTools={easynpsTools}
         language={selectedLanguage}
-        link={"https://github.com/omarboulbaze/easynps"}
+        link={"/project"}
         />
 
         <Project 
@@ -197,7 +191,7 @@ function Project(props){
       <div className="item">
         <img className="logo" src={props.logo} alt="logo"/>
         <div className="project_description">
-          <h2>{props.text.title}</h2>
+          <h2 style={{fontWeight:"bold"}}>{props.text.title}</h2>
           <p>{props.text.description}</p>
         </div>
         <div className="tools">
@@ -211,7 +205,7 @@ function Project(props){
           }           
         </div> 
         <div className="learnMore-container">
-        <button className="learnMore-button" onClick={()=> window.open(props.link, '_blank')}>{props.language.experiences.learnMore}</button>
+        <a href={props.link}><button className="learnMore-button">{props.language.experiences.learnMore}</button></a>
         </div>
       </div>
   )
