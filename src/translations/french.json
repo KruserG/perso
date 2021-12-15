@@ -27,7 +27,26 @@
             "author":"— Steve Jobs"
         }
     },
-    "changeButtonLanguage":"English"
+    "changeButtonLanguage":"English",
+    "easynps":{
+        "title":"Easy NPS",
+        "description":"Easy NPS est un outil permettant de faciliter le remplissage des sondages sur la satisfaction des clients dans les magasins de détails. Les clients peuvent facilement accéder aux sondages en scannant un code QR généré par un associé aux ventes.",
+        "Live_Preview":"Aperçu en direct",
+        "Source_Code":"Code source",
+        "Likes":"J'aime",
+        "Preview":"Aperçu",
+        "Technologies_Used":"Technologies utilisées",
+        "My_Role":"Mon Rôle",
+        "Notable_Features":"Caractéristiques notables",
+        "Project_Challenges":"Défis du projet",
+        "My_Solutions":"Mes solutions",
+        "html":{
+            "My_Role": "Mon objectif principal est de créer une application Web progressive Full-Stack. Implémentation d'une interface utilisateur réactive avec CSS3 combinée à des concepts UX optimisés à l'aide de ReactJS. Les données collectées sont stockées dans une base de données MongoDB tout en utilisant NodeJS comme environnement d'exécution et ExpressJS pour le REST API côté serveur.",
+            "Notable_Features":["Générateur de code QR permettant au client d'accéder instantanément au sondage NPS (Net Promoter Score).","Design responsif sur le web et mobile en CSS3.","Vérification de la validité du code QR afin d'éviter les avis en double et les faux échantillons","Fonctionnalité \"Se souvenir de moi\" (informations de l'associé) lorsque vous voulez générer un code QR, ce qui le rend plus rapide pour les vendeurs."],
+            "Project_Challenges":["Mise en page rapide et réactive sur mobile. 100% de nos utilisateurs sont sur mobile puisque le QR Code est scanné à l'aide de leur caméra.","UI/UX minimaliste pour les associés aux ventes. L'outil générateur de code QR doit être simple et efficace."],
+            "My_Solutions":["Déployer l'application en tant que PWA (Progressive Web Application), offrant aux utilisateurs de multiples avantages similaires à une application native.","Donner aux employés la possibilité d'enregistrer Easy NPS sur leur écran d'accueil et de générer des codes QR hors ligne."]
+        }
+    }
     
 
 }

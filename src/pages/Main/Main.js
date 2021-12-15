@@ -35,7 +35,7 @@ import mongoLogo from '../../images/logos/mongodb.png';
 import circuit from '../../images/logos/circuit.png'
 
 
-function App() {
+function App(props) {
 
 const sunsetradioTools = [{name:"PHP",image:phpLogo},
                         {name:"jQuery",image: jqueryLogo},
@@ -63,16 +63,15 @@ if(!localStorage.getItem("language")){
   localStorage.setItem("language","english")
 }
 
-const [selectedLanguage, setSelectedLanguage] = useState(()=> localStorage.getItem("language") === "french" ? french : english );
 const [theme, setTheme] = useState(localStorage.getItem("theme"));
 const [themeIcon, setThemeIcon] = useState(()=> theme === "light" ? faMoon : faSun);
 
 const switchLanguage = ()=>{
-  if(selectedLanguage === french){
-    setSelectedLanguage(english)
+  if(props.selectedLanguage === french){
+    props.setSelectedLanguage(english)
     localStorage.setItem("language","english")
   }else{
-    setSelectedLanguage(french)
+    props.setSelectedLanguage(french)
     localStorage.setItem("language","french")
   }
 }
@@ -109,16 +108,16 @@ useEffect(()=>{
 
   <div className="header-container">
       <button className="theme-switch" onClick={switchTheme}><FontAwesomeIcon icon={themeIcon} /></button>
-      <button className="language-switch" onClick={switchLanguage} >{selectedLanguage.changeButtonLanguage}</button>
+      <button className="language-switch" onClick={switchLanguage} >{props.selectedLanguage.changeButtonLanguage}</button>
   </div>
  
 
     <Div100vh className="main-page">
 
       <div className="aboutMe-container">
-          <h1 className="reveal-animation" style={{fontSize:"5rem"}}>{selectedLanguage.mainPage.welcome}</h1>
-          <h4 className="reveal-animation delay-1s" style={{fontSize:"1.5rem"}}>{selectedLanguage.mainPage.introduction}</h4>
-          <h6 className="reveal-animation delay-2s" style={{fontSize:"1rem"}}>{selectedLanguage.mainPage.description}</h6>
+          <h1 className="reveal-animation" style={{fontSize:"5rem"}}>{props.selectedLanguage.mainPage.welcome}</h1>
+          <h4 className="reveal-animation delay-1s" style={{fontSize:"1.5rem"}}>{props.selectedLanguage.mainPage.introduction}</h4>
+          <h6 className="reveal-animation delay-2s" style={{fontSize:"1rem"}}>{props.selectedLanguage.mainPage.description}</h6>
       </div>
 
       <div className="social-container social-links reveal-animation delay-3s">
@@ -139,40 +138,40 @@ useEffect(()=>{
     <Element name="experiences">
       <div  className="experiences" id="exp">
       <div className="head">
-        <h1 className="title"><FontAwesomeIcon icon={faCode}/> {selectedLanguage.experiences.title}</h1>
+        <h1 className="title"><FontAwesomeIcon icon={faCode}/> {props.selectedLanguage.experiences.title}</h1>
       </div>
 
       <div className="body">
         <Project 
         logo={easynpsLogo}
-        text={selectedLanguage.experiences.easynps}
+        text={props.selectedLanguage.experiences.easynps}
         projectTools={easynpsTools}
-        language={selectedLanguage}
-        link={"/project"}
+        language={props.selectedLanguage}
+        link={"/easynps"}
         />
 
         <Project 
         logo={sunsetradioLogo}
-        text={selectedLanguage.experiences.sunsetradio}
+        text={props.selectedLanguage.experiences.sunsetradio}
         projectTools={sunsetradioTools}
-        language={selectedLanguage}
+        language={props.selectedLanguage}
         link={"https://github.com/omarboulbaze/sunsetradio-website"}
         />
 
         <Project 
         logo={tcornerLogo}
-        text={selectedLanguage.experiences.tcorner}
+        text={props.selectedLanguage.experiences.tcorner}
         projectTools={tcornerTools}
-        language={selectedLanguage}
+        language={props.selectedLanguage}
         link={"https://github.com/omarboulbaze/tcorner-website"}
         />
       </div>
 
       <div className="quote">
         <h4>
-        {selectedLanguage.quote.quote0.content}
+        {props.selectedLanguage.quote.quote0.content}
         <br/>
-        {selectedLanguage.quote.quote0.author}
+        {props.selectedLanguage.quote.quote0.author}
         </h4>
         <h1 className="bigText">...</h1>
       </div>
