@@ -1,6 +1,6 @@
 {
     "short_name": "Omar Boulbaze",
-    "name": "Omar Boulbaze | Développeur Web",
+    "name": "Omar Boulbaze | Web Developer",
     "description": "Bonjour! Je suis Omar Boulbaze. Ici vous trouverez mes projets personnels ainsi qu'une petite présentation de qui je suis.",
     "display": "standalone",
     "orientation": "portrait",
@@ -8,13 +8,15 @@
       {
           "src": "/images/android-chrome-192x192.png",
           "sizes": "192x192",
-          "type": "image/png"
+          "type": "image/png",
+          "purpose": "maskable" 
       },
-    {
-      "src": "/images/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }],
+      {
+        "src": "/images/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "any": "any" 
+      }],
     "start_url": "/",
     "theme_color": "#f5f5f5",
     "background_color": "#f5f5f5"

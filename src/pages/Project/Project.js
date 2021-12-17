@@ -19,14 +19,17 @@ import mongoLogo from '../../images/logos/mongodb.png'
 
 function Project(props){
 
+    document.title = "Omar Boulbaze | Easy NPS";
+    
+// #region Slideshow
+    const [slide, setSlide] = useState(0);
+
     const [slideImages] = useState([
         {id:0,src:screenshot},
         {id:1,src:screenshot2},
         {id:2,src:screenshot3},
         {id:3,src:screenshot1}
     ]);
-
-    const [slide, setSlide] = useState(0);
 
     function slideLeft(){
         if(slide===0){
@@ -47,6 +50,9 @@ function Project(props){
         const rs = document.querySelector(':root').style;
           rs.setProperty('--slide',slide);
         }, [slide]);
+// #endregion Slideshow
+
+
 
     return(
         <>

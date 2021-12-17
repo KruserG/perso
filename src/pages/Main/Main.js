@@ -69,9 +69,11 @@ const [themeIcon, setThemeIcon] = useState(()=> theme === "light" ? faMoon : faS
 const switchLanguage = ()=>{
   if(props.selectedLanguage === french){
     props.setSelectedLanguage(english)
+    document.title = "Omar Boulbaze | Web Developer";
     localStorage.setItem("language","english")
   }else{
     props.setSelectedLanguage(french)
+    document.title = "Omar Boulbaze | Développeur Web";
     localStorage.setItem("language","french")
   }
 }
@@ -116,8 +118,8 @@ useEffect(()=>{
 
       <div className="aboutMe-container">
           <h1 className="reveal-animation" style={{fontSize:"5rem"}}>{props.selectedLanguage.mainPage.welcome}</h1>
-          <h4 className="reveal-animation delay-1s" style={{fontSize:"1.5rem"}}>{props.selectedLanguage.mainPage.introduction}</h4>
-          <h6 className="reveal-animation delay-2s" style={{fontSize:"1rem"}}>{props.selectedLanguage.mainPage.description}</h6>
+          <h2 className="reveal-animation delay-1s" style={{fontSize:"1.5rem"}}>{props.selectedLanguage.mainPage.introduction}</h2>
+          <h3 className="reveal-animation delay-2s" style={{fontSize:"1rem"}}>{props.selectedLanguage.mainPage.description}</h3>
       </div>
 
       <div className="social-container social-links reveal-animation delay-3s">
@@ -168,11 +170,11 @@ useEffect(()=>{
       </div>
 
       <div className="quote">
-        <h4>
+        <h1>
         {props.selectedLanguage.quote.quote0.content}
         <br/>
         {props.selectedLanguage.quote.quote0.author}
-        </h4>
+        </h1>
         <h1 className="bigText">...</h1>
       </div>
       </div>
