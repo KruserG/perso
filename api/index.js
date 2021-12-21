@@ -25,32 +25,6 @@ mongoose.connect(process.env.MONGO_URL, {
 // Importing the exported models
 const Like = require('./models/like');
 
-// Returning all likes that exists in the database.
-app.get('/api/', (req,res)=>{
-  Like.find({}, (err, data) =>{
-      if(err) {
-        console.log(err);
-        res.status(500).send();
-      } 
-      else {
-      res.status(200).json(data);
-      }
-    });
-  });
-
-// Returning likes that exists in the database of a specific project
-app.get('/api/projectLikes/:project', (req,res)=>{
-  Like.find({project:req.params.project}, (err, data) =>{
-      if(err) {
-        console.log(err);
-        res.status(500).send();
-      } 
-      else {
-      res.status(200).json(data);
-      }
-    });
-  });
-
 // Returning the number of likes in a specific project
 app.get('/api/projectLikesNumber/:project', (req,res)=>{
   Like.find({project:req.params.project}, (err, data) =>{
@@ -76,7 +50,7 @@ app.post('/api/addLike', (req, res)=>{
 
 });
 
-const PORT = process.env.PORT || 8800;
+const PORT = process.env.PORT || 8801;
 app.listen(PORT, ()=>{
    console.log(`Server started on ${PORT}...`)
 })
