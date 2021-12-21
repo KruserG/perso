@@ -94,6 +94,21 @@ color: #f5f5f5;
     color: #e0e0e0;
     background-color: #d12626;
 }
+
+.like-button-liked{
+    border: 2px solid #d12626;
+    padding-inline: 0.5rem;
+    margin: 1rem;
+    margin-top: 0rem;
+    color: #e0e0e0;
+    background-color: #d12626;
+}
+
+.like-button-liked:hover{
+    color: #e0e0e0;
+    background-color: #d12626;
+}
+
 .like-icon{
     transition: transform 0.4s;
 }

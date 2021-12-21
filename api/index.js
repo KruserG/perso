@@ -38,7 +38,7 @@ app.get('/api/', (req,res)=>{
     });
   });
 
-  // Returning likes that exists in the database of a specific project
+// Returning likes that exists in the database of a specific project
 app.get('/api/projectLikes/:project', (req,res)=>{
   Like.find({project:req.params.project}, (err, data) =>{
       if(err) {
@@ -51,7 +51,7 @@ app.get('/api/projectLikes/:project', (req,res)=>{
     });
   });
 
-    // Returning the number of likes in a specific project
+// Returning the number of likes in a specific project
 app.get('/api/projectLikesNumber/:project', (req,res)=>{
   Like.find({project:req.params.project}, (err, data) =>{
       if(err) {
@@ -70,7 +70,7 @@ app.post('/api/addLike', (req, res)=>{
   const like = Like(req.body);
 
   like.save((err,data)=> {
-    if(err) return res.status(500).json(err);          
+    if(err) return res.status(409).json(err);          
         res.status(201).json(data);
       });   
 

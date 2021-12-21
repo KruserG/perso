@@ -16,6 +16,8 @@ import screenshot3 from '../../images/screenshots/phone_preview3.jpg'
 import reactLogo from '../../images/logos/react.png'
 import nodeLogo from '../../images/logos/nodejs.png'
 import mongoLogo from '../../images/logos/mongodb.png'
+//importing axios
+const axios = require('axios');
 
 function Project(props){
 
@@ -52,6 +54,62 @@ function Project(props){
         }, [slide]);
 // #endregion Slideshow
 
+//Using dotenv variable dynamically depending on the status of the app (developement or production)
+const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
+// states
+const [isLiked, setIsLiked] = useState(false);
+const [likesNumber, setLikesNumber] = useState(0);
+const [ipAddress, setIpAddress] = useState();
+
+function likeProject(){
+    if (!isLiked) addLike()   
+}
+
+// On component loading
+useEffect(()=>{
+    // Checking if user already has the cookie saved in the browser
+    const value = ('; '+document.cookie).split(`; like=`).pop().split(';')[0];
+    if (value.length){
+        setIsLiked(true)
+    }else{
+        setIsLiked(false)
+    }
+    // Get how many likes are in this project
+    axios.get(apiUrl + `/projectLikesNumber/easynps`)
+          .then( (number) => {
+            setLikesNumber(number.data)
+          })
+          .catch( error => {
+            console.log(error);
+          });
+
+    //Assign IP Address to the component state
+    fetch("http://api.ipify.org/?format=json").then(response => response.json()).then(data => { setIpAddress(data.ip) });
+
+},[apiUrl])
+ 
+
+// When the user clicks on the Like button
+function addLike(){
+    const Like = {
+        date: new Date().toISOString(),
+        ip:ipAddress,
+        project:"easynps"
+    }
+    //Adding a project cookie
+    document.cookie = "like="+Date.now()+"easynps"+ipAddress+"; expires=01 Jan 2023 00:00:00 GMT; path=/; Secure";
+
+    axios.post(apiUrl + `/addLike`, Like)
+          .then( (res) => {
+            setIsLiked(true)
+            console.log(res)
+          })
+          .catch( error => {
+              setIsLiked(true)
+          });
+}
+
+
 
 
     return(
@@ -64,7 +122,8 @@ function Project(props){
         <div className='project-head-container'>
             <div className='project-image-container'>
                 <img className='project-image' src={easynpsLogo} alt=""/>
-                <button className='project-button like-button'><FontAwesomeIcon icon={faHeart} className='like-icon'/> 2 {props.selectedLanguage.easynps.Likes}</button>
+                <button className={isLiked ? 'project-button like-button-liked' : 'project-button like-button'} onClick={()=> likeProject()}><FontAwesomeIcon icon={faHeart} className='like-icon'/> {likesNumber} {props.selectedLanguage.easynps.Likes}</button>
+                
             </div>
             <div className='project-info'>
                 <h1 className='project-title'>{props.selectedLanguage.easynps.title}</h1>

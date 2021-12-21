@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
 const LikesSchema = new mongoose.Schema({
-    cookie:{
-        type:String,
-        unique:true,
-        required:true
-    },
     ip:{
         type:String,
-        required:true
+        required:true,
+        unique:true,
     },
     date:{
         type:Date,
