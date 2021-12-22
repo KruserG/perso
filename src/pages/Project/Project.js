@@ -6,7 +6,7 @@ import './Project.css';
 import easynpsLogo from '../../images/logos/easynpsLogo.jpg'
 //fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faSearch, faCode, faChevronLeft, faChevronRight, faCircle, faCaretLeft, faLightbulb, faUserTie, faCogs, faCheckCircle, faImages, faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faCode, faChevronLeft, faChevronRight, faCircle, faCaretLeft, faLightbulb, faUserTie, faCogs, faCheckCircle, faImages, faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
 //screenshots
 import screenshot from '../../images/screenshots/phone_preview.jpg'
 import screenshot1 from '../../images/screenshots/phone_preview1.jpg'
@@ -17,7 +17,7 @@ import reactLogo from '../../images/logos/react.png'
 import nodeLogo from '../../images/logos/nodejs.png'
 import mongoLogo from '../../images/logos/mongodb.png'
 //importing axios
-const axios = require('axios');
+// const axios = require('axios');
 
 function Project(props){
 
@@ -54,61 +54,62 @@ function Project(props){
         }, [slide]);
 // #endregion Slideshow
 
+// #region Like feature
 //Using dotenv variable dynamically depending on the status of the app (developement or production)
-const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
-// states
-const [isLiked, setIsLiked] = useState(false);
-const [likesNumber, setLikesNumber] = useState(0);
-const [ipAddress, setIpAddress] = useState();
+// const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
+// // states
+// const [isLiked, setIsLiked] = useState(false);
+// const [likesNumber, setLikesNumber] = useState(0);
+// const [ipAddress, setIpAddress] = useState();
 
-function likeProject(){
-    if (!isLiked) addLike()   
-}
+// function likeProject(){
+//     if (!isLiked) addLike()   
+// }
 
-// On component loading
-useEffect(()=>{
-    // Checking if user already has the cookie saved in the browser
-    const value = ('; '+document.cookie).split(`; like=`).pop().split(';')[0];
-    if (value.length){
-        setIsLiked(true)
-    }else{
-        setIsLiked(false)
-    }
-    // Get how many likes are in this project
-    axios.get(apiUrl + `/projectLikesNumber/easynps`)
-          .then( (number) => {
-            setLikesNumber(number.data)
-          })
-          .catch( error => {
-            console.log(error);
-          });
+// // On component loading
+// useEffect(()=>{
+//     // Checking if user already has the cookie saved in the browser
+//     const value = ('; '+document.cookie).split(`; like=`).pop().split(';')[0];
+//     if (value.length){
+//         setIsLiked(true)
+//     }else{
+//         setIsLiked(false)
+//     }
+//     // Get how many likes are in this project
+//     axios.get(apiUrl + `/projectLikesNumber/easynps`)
+//           .then( (number) => {
+//             setLikesNumber(number.data)
+//           })
+//           .catch( error => {
+//             console.log(error);
+//           });
 
-    //Assign IP Address to the component state
-    fetch("http://api.ipify.org/?format=json").then(response => response.json()).then(data => { setIpAddress(data.ip) });
+//     //Assign IP Address to the component state
+//     fetch("https://api.ipify.org/?format=json").then(response => response.json()).then(data => { setIpAddress(data.ip) });
 
-},[apiUrl])
+// },[apiUrl])
  
 
-// When the user clicks on the Like button
-function addLike(){
-    const Like = {
-        date: new Date().toISOString(),
-        ip:ipAddress,
-        project:"easynps"
-    }
-    //Adding a project cookie
-    document.cookie = "like="+Date.now()+"easynps"+ipAddress+"; expires=01 Jan 2023 00:00:00 GMT; path=/; Secure";
+// // When the user clicks on the Like button
+// function addLike(){
+//     const Like = {
+//         date: new Date().toISOString(),
+//         ip:ipAddress,
+//         project:"easynps"
+//     }
+//     //Adding a project cookie
+//     document.cookie = "like="+Date.now()+"easynps"+ipAddress+"; expires=01 Jan 2023 00:00:00 GMT; path=/; Secure";
 
-    axios.post(apiUrl + `/addLike`, Like)
-          .then( (res) => {
-            setIsLiked(true)
-            console.log(res)
-          })
-          .catch( error => {
-              setIsLiked(true)
-          });
-}
-
+//     axios.post(apiUrl + `/addLike`, Like)
+//           .then( (res) => {
+//             setIsLiked(true)
+//             console.log(res)
+//           })
+//           .catch( error => {
+//               setIsLiked(true)
+//           });
+// }
+// #endregion Like feature
 
 
 
@@ -122,7 +123,7 @@ function addLike(){
         <div className='project-head-container'>
             <div className='project-image-container'>
                 <img className='project-image' src={easynpsLogo} alt=""/>
-                <button className={isLiked ? 'project-button like-button-liked' : 'project-button like-button'} onClick={()=> likeProject()}><FontAwesomeIcon icon={faHeart} className='like-icon'/> {likesNumber} {props.selectedLanguage.easynps.Likes}</button>
+                {/* <button className={isLiked ? 'project-button like-button-liked' : 'project-button like-button'} onClick={()=> likeProject()}><FontAwesomeIcon icon={faHeart} className='like-icon'/> {likesNumber} {props.selectedLanguage.easynps.Likes}</button> */}
                 
             </div>
             <div className='project-info'>

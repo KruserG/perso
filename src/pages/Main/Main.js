@@ -170,12 +170,12 @@ useEffect(()=>{
       </div>
 
       <div className="quote">
-        <h1>
+        <h5>
         {props.selectedLanguage.quote.quote0.content}
         <br/>
         {props.selectedLanguage.quote.quote0.author}
-        </h1>
-        <h1 className="bigText">...</h1>
+        </h5>
+        <h6 className="bigText">...</h6>
       </div>
       </div>
     </Element> 

@@ -78,7 +78,7 @@ color: var(--background-color);
 
 .reveal-animation.delay-2s{
     opacity: 0;
-    animation:  revealText 1s 2s forwards ;
+    animation:  fadeIn 1s 2s forwards ;
 }
 .reveal-animation.delay-3s{
     opacity: 0;
