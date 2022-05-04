@@ -18,6 +18,7 @@ import {useEffect, useState} from 'react';
 import english from '../../translations/english.json';
 import french from '../../translations/french.json';
 //projects logos
+import cookieLogo from '../../images/logos/cookieLogo.jpg'
 import easynpsLogo from '../../images/logos/easynpsLogo.jpg'
 import sunsetradioLogo from '../../images/logos/sunsetradioLogo.jpg'
 import tcornerLogo from '../../images/logos/tcornerLogo.jpg'
@@ -53,6 +54,12 @@ const tcornerTools = [{name:"PHP",image:phpLogo},
 const easynpsTools = [{name:"Node.js",image:nodejsLogo},
                         {name:"React.js",image:reactLogo},
                         {name:"MongoDB",image:mongoLogo}
+                      ];
+
+
+const cookiejTools = [{name:"Node.js",image:nodejsLogo},
+                      {name:"React.js",image:reactLogo},
+                      {name:"MongoDB",image:mongoLogo}
                       ];
 
 if(!localStorage.getItem("theme")){
@@ -144,6 +151,14 @@ useEffect(()=>{
       </div>
 
       <div className="body">
+      <Project 
+        logo={cookieLogo}
+        text={props.selectedLanguage.experiences.cookiej}
+        projectTools={cookiejTools}
+        language={props.selectedLanguage}
+        link={"https://github.com/omarboulbaze/cookiej"}
+        />
+
         <Project 
         logo={easynpsLogo}
         text={props.selectedLanguage.experiences.easynps}
@@ -190,10 +205,12 @@ useEffect(()=>{
 function Project(props){
   return(
       <div className="item">
-        <img className="logo" src={props.logo} alt="logo"/>
-        <div className="project_description">
-          <h2 style={{fontWeight:"bold"}}>{props.text.title}</h2>
-          <p>{props.text.description}</p>
+        <div>
+          <img className="logo" src={props.logo} alt="logo"/>
+          <div className="project_description">
+            <h2 style={{fontWeight:"bold"}}>{props.text.title}</h2>
+            <p>{props.text.description}</p>
+          </div>
         </div>
         <div className="tools">
           {   props.projectTools.map((skill)=>{ 
@@ -204,9 +221,9 @@ function Project(props){
               );
             })
           }           
-        </div> 
+        </div>
         <div className="learnMore-container">
-        <a href={props.link}><button className="learnMore-button">{props.language.experiences.learnMore}</button></a>
+          <a href={props.link}><button className="learnMore-button">{props.language.experiences.learnMore}</button></a>
         </div>
       </div>
   )

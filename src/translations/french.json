@@ -3,7 +3,7 @@
     "mainPage": {
         "welcome": "Salut.",
         "introduction":"C'est Omar Boulbaze!",
-        "description":"Je suis un Développeur Web et Designer passioné par la technologie et le design. J'apprends, je m'améliore et je fais avancer les choses chaque jour. Un jour à la fois."
+        "description":"Je suis un Développeur Web et Designer passioné par la technologie et le design. Je m'informe, je m'améliore et je fais avancer les choses chaque jour. Un jour à la fois."
     },
     "experiences":{
         "title":"Mes projets récents",
@@ -19,6 +19,10 @@
         "easynps":{
             "title":"Easy NPS",
             "description":"Easy NPS est un outil permettant de faciliter le remplissage des sondages sur la satisfaction des clients dans les magasins de détails. Les clients peuvent facilement accéder aux sondages en scannant un code QR généré par un associé aux ventes."
+        },
+        "cookiej":{
+            "title":"CookieJ",
+            "description":"CookieJ est une application mobile/web inspiré par la technique du Pot à Biscuit (The Cookie Jar). Elle consiste à utiliser vos réalisations passées pour vous motiver lorsque vous éprouvez des difficultés. L'application vous permet de mettre en place une liste de toutes vos victoires et triomphes ainsi que les obstacles et défis que vous avez surmontés."
         }
     },
     "quote":{
