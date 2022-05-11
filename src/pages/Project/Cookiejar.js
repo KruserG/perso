@@ -1,0 +1,233 @@
+//react
+import { useEffect, useState } from 'react';
+//style
+import './Project.css';
+//importing images
+import cookiejarLogo from '../../images/logos/cookieLogo.jpg'
+//fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faCode, faChevronLeft, faChevronRight, faCircle, faCaretLeft, faUserTie, faCogs, faImages} from '@fortawesome/free-solid-svg-icons';
+// import { faCheckCircle, faLightbulb, faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
+//screenshots
+import screenshot1 from '../../images/screenshots/cookie1.jpg'
+import screenshot2 from '../../images/screenshots/cookie2.jpg'
+import screenshot3 from '../../images/screenshots/cookie3.jpg'
+
+//technologies used
+import reactLogo from '../../images/logos/react.png'
+import nodeLogo from '../../images/logos/nodejs.png'
+import mongoLogo from '../../images/logos/mongodb.png'
+//importing axios
+// const axios = require('axios');
+
+function Project(props){
+
+    document.title = "Omar Boulbaze | Cookie Jar";
+    
+// #region Slideshow
+    const [slide, setSlide] = useState(0);
+
+    const [slideImages] = useState([
+        {id:0,src:screenshot1},
+        {id:1,src:screenshot2},
+        {id:2,src:screenshot3}
+        ]);
+
+    function slideLeft(){
+        if(slide===0){
+            setSlide(slideImages.length-1)
+        }else{
+            setSlide(slide-1)
+        }  
+    }
+    function slideRight(){
+        if(slide === slideImages.length-1){
+            setSlide(0)
+        }else{
+            setSlide(slide+1)
+        }  
+    }
+
+    useEffect(()=>{
+        const rs = document.querySelector(':root').style;
+          rs.setProperty('--slide',slide);
+        }, [slide]);
+// #endregion Slideshow
+
+// #region Like feature
+//Using dotenv variable dynamically depending on the status of the app (developement or production)
+// const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
+// // states
+// const [isLiked, setIsLiked] = useState(false);
+// const [likesNumber, setLikesNumber] = useState(0);
+// const [ipAddress, setIpAddress] = useState();
+
+// function likeProject(){
+//     if (!isLiked) addLike()   
+// }
+
+// // On component loading
+// useEffect(()=>{
+//     // Checking if user already has the cookie saved in the browser
+//     const value = ('; '+document.cookie).split(`; like=`).pop().split(';')[0];
+//     if (value.length){
+//         setIsLiked(true)
+//     }else{
+//         setIsLiked(false)
+//     }
+//     // Get how many likes are in this project
+//     axios.get(apiUrl + `/projectLikesNumber/easynps`)
+//           .then( (number) => {
+//             setLikesNumber(number.data)
+//           })
+//           .catch( error => {
+//             console.log(error);
+//           });
+
+//     //Assign IP Address to the component state
+//     fetch("https://api.ipify.org/?format=json").then(response => response.json()).then(data => { setIpAddress(data.ip) });
+
+// },[apiUrl])
+ 
+
+// // When the user clicks on the Like button
+// function addLike(){
+//     const Like = {
+//         date: new Date().toISOString(),
+//         ip:ipAddress,
+//         project:"easynps"
+//     }
+//     //Adding a project cookie
+//     document.cookie = "like="+Date.now()+"easynps"+ipAddress+"; expires=01 Jan 2023 00:00:00 GMT; path=/; Secure";
+
+//     axios.post(apiUrl + `/addLike`, Like)
+//           .then( (res) => {
+//             setIsLiked(true)
+//             console.log(res)
+//           })
+//           .catch( error => {
+//               setIsLiked(true)
+//           });
+// }
+// #endregion Like feature
+
+
+
+    return(
+        <>
+        <div className='navigation-container'>
+            <a href="/#exp" className='home-button'>
+                <FontAwesomeIcon icon={faCaretLeft} />
+            </a>
+        </div>
+        <div className='project-head-container'>
+            <div className='project-image-container'>
+                <img className='project-image' src={cookiejarLogo} alt=""/>
+                {/* <button className={isLiked ? 'project-button like-button-liked' : 'project-button like-button'} onClick={()=> likeProject()}><FontAwesomeIcon icon={faHeart} className='like-icon'/> {likesNumber} {props.selectedLanguage.easynps.Likes}</button> */}
+                
+            </div>
+            <div className='project-info'>
+                <h1 className='project-title'>{props.selectedLanguage.cookiejar.title}</h1>
+                <h6 className='project-description'>{props.selectedLanguage.cookiejar.description}</h6>
+            </div>
+            <div className='project-button-container'>
+                <div className='project-button-container'>
+                    <a href="https://cookie.omar.bio/" target="_blank" rel='noreferrer'><button className='project-button'><FontAwesomeIcon icon={faSearch} className='like-icon'/> {props.selectedLanguage.cookiejar.Live_Preview}</button></a>
+                    <a href="https://github.com/omarboulbaze/cookiej" target="_blank" rel='noreferrer'><button className='project-button'><FontAwesomeIcon icon={faCode} className='like-icon'/> {props.selectedLanguage.cookiejar.Source_Code}</button></a>
+                </div>
+            </div>
+        </div>
+        <div className='project-body-container'>
+            <div  className='project-section-title'>
+                 <h2><FontAwesomeIcon icon={faImages} style={{fontSize:"2rem", marginRight:"1rem", opacity:"0.6"}}/>{props.selectedLanguage.cookiejar.Preview}</h2>
+            </div>
+            <div className='project-slide'>
+                <button className='project-slide-button-left hover-opacity-1' onClick={()=>slideLeft()}><FontAwesomeIcon icon={faChevronLeft}/></button>
+                {
+                    slideImages.map(img => {
+                        return <img key={img.id} className='project-slide-image' src={img.src} alt=""/>
+                    })
+                }
+                <button className='project-slide-button-right hover-opacity-1' onClick={()=>slideRight()}><FontAwesomeIcon icon={faChevronRight}/></button>
+            </div>
+            <div className='slide-points'>
+                {
+                    slideImages.map((img)=>{
+                        if(slide===img.id){
+                            return <button key={img.id} className='slide-points-button hover-opacity-1 active-slide-button' onClick={()=> setSlide(img.id)}><FontAwesomeIcon icon={faCircle}/></button>
+                        }else{
+                            return <button key={img.id} className='slide-points-button hover-opacity-1' onClick={()=> setSlide(img.id)}><FontAwesomeIcon icon={faCircle}/></button>
+                        }
+                        
+                    })
+                }
+            </div>
+        </div>
+        <div className='general-container'>
+        <div className='tech-container'>
+        <div  className='project-section-title'>
+                 <h2><FontAwesomeIcon icon={faCogs} style={{fontSize:"2rem", marginRight:"1rem", opacity:"0.6"}}/>{props.selectedLanguage.cookiejar.Technologies_Used}</h2>
+                    <div className='tech-used-container'>
+                        <div className='tech-used-item'>
+                            <img src={reactLogo} alt=''/>
+                            <span>React.js</span>
+                        </div>
+                        <div className='tech-used-item'>
+                            <img src={nodeLogo} alt=''/>
+                            <span>Node.js</span>
+                        </div>
+                        <div className='tech-used-item'>
+                            <img src={mongoLogo} alt=''/>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+        <div className='role-container'>
+        <div  className='project-section-title'>
+                 <h2><FontAwesomeIcon icon={faUserTie} style={{fontSize:"2rem", marginRight:"1rem", opacity:"0.6"}}/>{props.selectedLanguage.cookiejar.My_Role}</h2>
+                    <p>
+                    {props.selectedLanguage.cookiejar.html.My_Role}
+                    </p>  
+            </div>
+        </div>
+        </div>
+        {/* <div className='features-container'>
+        <div  className='feature-section'>
+                 <h2 style={{fontWeight:"bold"}}><FontAwesomeIcon icon={faLightbulb} style={{fontSize:"2rem", marginRight:"1rem", color:"#ffcb3d", opacity:"0.6"}}/>{props.selectedLanguage.cookiejar.Notable_Features}</h2>
+                        <ul>
+                        <li>{props.selectedLanguage.cookiejar.html.Notable_Features[0]}</li>
+                        <li>{props.selectedLanguage.cookiejar.html.Notable_Features[1]}</li>
+                        <li>{props.selectedLanguage.cookiejar.html.Notable_Features[2]}</li>
+                        <li>{props.selectedLanguage.cookiejar.html.Notable_Features[3]}</li>
+                        </ul> 
+        </div>
+        </div>
+        <div className='difficulty-solution-container'>
+        <div className='role-container'>
+            <div  className='project-section-title'>
+                    <h2><FontAwesomeIcon icon={faPuzzlePiece} style={{fontSize:"2rem", marginRight:"1rem", color:"#ff2b2b", opacity:"0.6"}}/>{props.selectedLanguage.cookiejar.Project_Challenges}</h2>
+                        <ul>
+                        <li>{props.selectedLanguage.cookiejar.html.Project_Challenges[0]}</li>
+                        <li>{props.selectedLanguage.cookiejar.html.Project_Challenges[1]}</li>
+                        </ul>
+            </div>
+        </div>
+        <div className='role-container'>
+        <div  className='project-section-title'>
+                 <h2><FontAwesomeIcon icon={faCheckCircle} style={{fontSize:"2rem", marginRight:"1rem", color:"#60de49", opacity:"0.6"}}/>{props.selectedLanguage.cookiejar.My_Solutions}</h2>
+                    <ul>
+                    <li>{props.selectedLanguage.cookiejar.html.My_Solutions[0]}</li>
+                    <li>{props.selectedLanguage.cookiejar.html.My_Solutions[1]}</li>
+                    </ul>  
+            </div>
+        </div>
+        </div> */}
+        
+        
+        </>
+    )
+}
+
+export default Project; 

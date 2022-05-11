@@ -156,7 +156,7 @@ useEffect(()=>{
         text={props.selectedLanguage.experiences.cookiej}
         projectTools={cookiejTools}
         language={props.selectedLanguage}
-        link={"https://github.com/omarboulbaze/cookiej"}
+        link={"/cookiejar"}
         />
 
         <Project 
