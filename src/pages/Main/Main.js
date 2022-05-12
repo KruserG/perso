@@ -101,11 +101,13 @@ useEffect(()=>{
   const rs = document.querySelector(':root').style;
   if(theme === "light"){
     rs.setProperty('--primary-color','#343a40');
+    rs.setProperty('--experiences-color','#343a40');
     rs.setProperty('--secondary-color','#828486');
     rs.setProperty('--background-color','#f5f5f5');
   } 
   else{
     rs.setProperty('--primary-color','#f5f5f5');
+    rs.setProperty('--experiences-color','#24272b');
     rs.setProperty('--secondary-color','#828486');
     rs.setProperty('--background-color','#343a40');
   }
