@@ -2,7 +2,7 @@
 
 # About This Project
 
-[![Logo](https://imgur.com/PgT2wWz.png)](https://omar.bio)
+[![image](https://user-images.githubusercontent.com/25458706/170864089-a2323f85-438e-4582-a981-432d1c66b970.png)](https://omar.bio)
 
 
 
