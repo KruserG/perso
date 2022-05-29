@@ -9,9 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faCode, faChevronLeft, faChevronRight, faCircle, faCaretLeft, faUserTie, faCogs, faImages} from '@fortawesome/free-solid-svg-icons';
 // import { faCheckCircle, faLightbulb, faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
 //screenshots
-import screenshot1 from '../../images/screenshots/cookie1.jpg'
-import screenshot2 from '../../images/screenshots/cookie2.jpg'
-import screenshot3 from '../../images/screenshots/cookie3.jpg'
+import screenshot1 from '../../images/screenshots/cookie5.jpg'
+import screenshot2 from '../../images/screenshots/cookie4.jpg'
+import screenshot3 from '../../images/screenshots/cookie6.jpg'
 
 //technologies used
 import reactLogo from '../../images/logos/react.png'
