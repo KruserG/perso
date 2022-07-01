@@ -2,8 +2,8 @@
     
     "mainPage": {
         "welcome": "Salut.",
-        "introduction":"C'est Omar Boulbaze!",
-        "description":"Je suis un Développeur Web et Designer passioné par la technologie et le design. Je m'informe, je m'améliore et je fais avancer les choses chaque jour. Un jour à la fois."
+        "introduction":"Je suis Omar Boulbaze!",
+        "description":"Développeur Web et Designer, passioné par la technologie et le design. Je m'informe, je m'améliore et je fais avancer les choses chaque jour. Un jour à la fois."
     },
     "experiences":{
         "title":"Mes projets récents",
